@@ -173,7 +173,7 @@ const Blog = () => {
                     {post.excerpt}
                   </p>
                   <Button asChild>
-                    <Link to={`/blog/${post.id}`}>
+                    <Link to="/blog/building-confidence-french-conversation">
                       Read Full Article
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
