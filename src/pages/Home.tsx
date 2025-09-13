@@ -12,7 +12,6 @@ import {
   CheckCircle,
   ArrowRight
 } from "lucide-react";
-import heroImage from "@/assets/hero-french-lessons.jpg";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
 import frenchClass from "@/assets/french-class.jpg";
 
@@ -20,15 +19,8 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-white/20"></div>
-        </div>
-        
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
+        <div className="relative z-10 text-center text-foreground px-4 max-w-4xl mx-auto">
           <Badge className="mb-6 bg-accent text-accent-foreground">
             <MapPin className="w-4 h-4 mr-1" />
             Dulwich, South East London
@@ -41,19 +33,19 @@ const Home = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Transform your rusty French into fluent conversation with our 6-week intensive blocks. 
             Perfect for returners ready to embrace their French journey again.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
+            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-white hover:bg-primary/90" asChild>
               <Link to="/contact">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Book Free 20-min Chat
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10" asChild>
+            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-white hover:bg-primary/90" asChild>
               <Link to="/lessons">
                 Learn More
                 <ArrowRight className="w-5 h-5 ml-2" />
