@@ -18,59 +18,38 @@ import {
 } from "lucide-react";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
 import frenchClass from "@/assets/french-class.jpg";
-import speechBubbles from "@/assets/speech-bubbles-abstract.jpg";
-import peopleChatting from "@/assets/people-chatting-abstract.jpg";
-import frenchElements from "@/assets/french-decorative-elements.jpg";
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-32">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-secondary/20 to-accent/10">
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute top-20 left-20 w-40 h-40 opacity-30 rounded-full"
-            style={{ backgroundImage: `url(${speechBubbles})`, backgroundSize: 'cover' }}
-          ></div>
-          <div 
-            className="absolute bottom-20 right-20 w-32 h-32 opacity-20"
-            style={{ backgroundImage: `url(${frenchElements})`, backgroundSize: 'cover' }}
-          ></div>
-          <div 
-            className="absolute top-1/2 right-10 w-20 h-20 opacity-25"
-            style={{ backgroundImage: `url(${peopleChatting})`, backgroundSize: 'cover' }}
-          ></div>
-        </div>
-
-        <div className="relative z-10 text-center text-foreground px-4 max-w-4xl mx-auto">
-          <Badge className="mb-6 bg-accent/20 text-accent-foreground border border-accent/30 backdrop-blur-sm">
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20">
             <MapPin className="w-4 h-4 mr-1" />
             Dulwich, South East London
           </Badge>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-foreground">
             Rediscover Your
-            <span className="block gradient-accent bg-clip-text text-transparent flex items-center justify-center gap-2">
-              <Sparkles className="w-12 h-12 text-accent" />
+            <span className="block text-primary mt-2">
               French Confidence
-              <Heart className="w-12 h-12 text-accent fill-current" />
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Transform your rusty French into fluent conversation with our 6-week intensive blocks. 
             Perfect for returners ready to embrace their French journey again.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" asChild>
+            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
               <Link to="/contact">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Book Free 20-min Chat
               </Link>
             </Button>
-            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" asChild>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
               <Link to="/lessons">
                 Learn More
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -81,11 +60,11 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-32 bg-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Why Choose French PLUS?
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground">
+              Why Choose French Flow?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Designed specifically for adults who want to reconnect with their French skills
@@ -93,61 +72,57 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Users className="w-8 h-8 text-primary" />
+            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Users className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
-                  <Heart className="w-4 h-4 text-accent fill-current" />
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
                   Small Groups
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Maximum 6 students for personalized attention and confident practice
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Clock className="w-8 h-8 text-primary" />
+            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Clock className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
-                  <Coffee className="w-4 h-4 text-accent" />
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
                   90-Minute Lessons
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Immersive sessions that give you time to really get into French flow
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Award className="w-8 h-8 text-primary" />
+            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Award className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
-                  <Sparkles className="w-4 h-4 text-accent" />
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
                   6-Week Blocks
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Structured progression with clear goals and measurable results
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <MessageCircle className="w-8 h-8 text-primary" />
+            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MessageCircle className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
-                  <BookOpen className="w-4 h-4 text-accent" />
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
                   Conversation Focus
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Build real confidence through practical, engaging conversations
                 </p>
               </CardContent>
@@ -157,45 +132,47 @@ const Home = () => {
       </section>
 
       {/* About Preview */}
-      <section className="py-20">
+      <section className="py-32 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4">Meet Your Teacher</Badge>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-                Passionate About Bringing French Back to Life
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                With over 10 years of experience teaching French to adults, I understand the unique 
-                challenges of returning to a language you once knew. My approach combines structured 
-                learning with the joy of rediscovering French culture and conversation.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            <div className="space-y-8">
+              <div>
+                <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20">Meet Your Teacher</Badge>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground leading-tight">
+                  Passionate About Bringing French Back to Life
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  With over 10 years of experience teaching French to adults, I understand the unique 
+                  challenges of returning to a language you once knew. My approach combines structured 
+                  learning with the joy of rediscovering French culture and conversation.
+                </p>
+              </div>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-4">
                 <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                  <span>MA in French Literature & Linguistics</span>
+                  <CheckCircle className="w-5 h-5 text-primary mr-4 flex-shrink-0" />
+                  <span className="text-foreground">MA in French Literature & Linguistics</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                  <span>Certified DELF/DALF examiner</span>
+                  <CheckCircle className="w-5 h-5 text-primary mr-4 flex-shrink-0" />
+                  <span className="text-foreground">Certified DELF/DALF examiner</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                  <span>Specializing in adult conversation classes</span>
+                  <CheckCircle className="w-5 h-5 text-primary mr-4 flex-shrink-0" />
+                  <span className="text-foreground">Specializing in adult conversation classes</span>
                 </li>
               </ul>
               
-              <Button asChild>
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                 <Link to="/about">
                   Learn More About Me
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
             </div>
             
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+              <div className="relative rounded-lg overflow-hidden shadow-lg">
                 <img 
                   src={teacherPortrait} 
                   alt="French teacher in classroom"
@@ -208,20 +185,20 @@ const Home = () => {
       </section>
 
       {/* Testimonial */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-32 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-8">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 text-accent fill-current" />
+                <Star key={i} className="w-6 h-6 text-accent fill-current" />
               ))}
             </div>
-            <blockquote className="text-xl md:text-2xl font-heading italic mb-6 leading-relaxed">
+            <blockquote className="text-2xl md:text-3xl font-heading italic mb-8 leading-relaxed text-foreground">
               "After 20 years since my A-levels, I thought my French was lost forever. 
               The 6-week course brought it all back and gave me the confidence to actually 
               use it. I'm now planning my first trip to France in decades!"
             </blockquote>
-            <cite className="text-muted-foreground">
+            <cite className="text-lg text-muted-foreground">
               — Sarah M., Dulwich Village
             </cite>
           </div>
@@ -229,22 +206,22 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 gradient-hero text-white">
+      <section className="py-32 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary-foreground">
             Ready to Rediscover Your French?
           </h2>
-          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+          <p className="text-xl mb-10 text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
             Start with a free 20-minute consultation to discuss your goals and assess your current level
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
               <Link to="/contact">
                 Book Your Free Chat
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
               <Link to="/pricing">
                 View Pricing
               </Link>
