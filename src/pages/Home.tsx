@@ -10,26 +10,51 @@ import {
   MapPin, 
   Star,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Coffee,
+  BookOpen,
+  Heart,
+  Sparkles
 } from "lucide-react";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
 import frenchClass from "@/assets/french-class.jpg";
+import speechBubbles from "@/assets/speech-bubbles-abstract.jpg";
+import peopleChatting from "@/assets/people-chatting-abstract.jpg";
+import frenchElements from "@/assets/french-decorative-elements.jpg";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-secondary/20 to-accent/10">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-20 left-20 w-40 h-40 opacity-30 rounded-full"
+            style={{ backgroundImage: `url(${speechBubbles})`, backgroundSize: 'cover' }}
+          ></div>
+          <div 
+            className="absolute bottom-20 right-20 w-32 h-32 opacity-20"
+            style={{ backgroundImage: `url(${frenchElements})`, backgroundSize: 'cover' }}
+          ></div>
+          <div 
+            className="absolute top-1/2 right-10 w-20 h-20 opacity-25"
+            style={{ backgroundImage: `url(${peopleChatting})`, backgroundSize: 'cover' }}
+          ></div>
+        </div>
+
         <div className="relative z-10 text-center text-foreground px-4 max-w-4xl mx-auto">
-          <Badge className="mb-6 bg-accent text-accent-foreground">
+          <Badge className="mb-6 bg-accent/20 text-accent-foreground border border-accent/30 backdrop-blur-sm">
             <MapPin className="w-4 h-4 mr-1" />
             Dulwich, South East London
           </Badge>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
             Rediscover Your
-            <span className="block gradient-accent bg-clip-text text-transparent">
+            <span className="block gradient-accent bg-clip-text text-transparent flex items-center justify-center gap-2">
+              <Sparkles className="w-12 h-12 text-accent" />
               French Confidence
+              <Heart className="w-12 h-12 text-accent fill-current" />
             </span>
           </h1>
           
@@ -39,13 +64,13 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-white hover:bg-primary/90" asChild>
+            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" asChild>
               <Link to="/contact">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Book Free 20-min Chat
               </Link>
             </Button>
-            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-white hover:bg-primary/90" asChild>
+            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" asChild>
               <Link to="/lessons">
                 Learn More
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -68,48 +93,60 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
               <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-primary" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Users className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">Small Groups</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
+                  <Heart className="w-4 h-4 text-accent fill-current" />
+                  Small Groups
+                </h3>
                 <p className="text-muted-foreground">
                   Maximum 6 students for personalized attention and confident practice
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
               <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-6 h-6 text-primary" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Clock className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">90-Minute Lessons</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
+                  <Coffee className="w-4 h-4 text-accent" />
+                  90-Minute Lessons
+                </h3>
                 <p className="text-muted-foreground">
                   Immersive sessions that give you time to really get into French flow
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
               <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-6 h-6 text-primary" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Award className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">6-Week Blocks</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
+                  <Sparkles className="w-4 h-4 text-accent" />
+                  6-Week Blocks
+                </h3>
                 <p className="text-muted-foreground">
                   Structured progression with clear goals and measurable results
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+            <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 hover:scale-105 bg-gradient-to-br from-card to-card/50 border-accent/20">
               <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="w-6 h-6 text-primary" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <MessageCircle className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">Conversation Focus</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2 flex items-center justify-center gap-2">
+                  <BookOpen className="w-4 h-4 text-accent" />
+                  Conversation Focus
+                </h3>
                 <p className="text-muted-foreground">
                   Build real confidence through practical, engaging conversations
                 </p>

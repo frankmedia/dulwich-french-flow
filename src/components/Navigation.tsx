@@ -20,12 +20,9 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Lessons", path: "/lessons" },
-    { name: "Online Classes", path: "/online-classes" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" }
+    { name: "About Me", path: "/about" },
+    { name: "Contact", path: "/contact" },
+    { name: "Blog", path: "/blog" }
   ];
 
   return (
@@ -34,10 +31,10 @@ const Navigation = () => {
         "fixed top-0 w-full z-50 transition-all duration-300",
         isScrolled 
           ? "bg-card/95 backdrop-blur-md shadow-soft border-b border-border" 
-          : "bg-transparent"
+          : "bg-background/80 backdrop-blur-sm border-b border-border/50"
       )}
     >
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
@@ -51,17 +48,17 @@ const Navigation = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Tab Navigation */}
+          <div className="hidden lg:flex items-center bg-muted/50 rounded-full p-1">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={cn(
-                  "font-medium transition-colors hover:text-primary",
+                  "px-6 py-3 rounded-full font-medium transition-all duration-200 text-sm",
                   location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-primary hover:bg-background/50"
                 )}
               >
                 {item.name}
@@ -71,10 +68,10 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="outline" size="sm" asChild>
+            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
               <Link to="/contact">
                 <Phone className="w-4 h-4 mr-2" />
-                Free Consultation
+                Free Chat
               </Link>
             </Button>
           </div>
