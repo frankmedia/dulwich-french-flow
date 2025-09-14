@@ -254,7 +254,7 @@ const Pricing = () => {
               <Card className="shadow-elegant border-blue-600" style={{ backgroundImage: 'linear-gradient(135deg, rgb(26, 57, 102), rgb(45, 82, 134))' }}>
                 <CardHeader>
                   <CardTitle className="font-heading text-2xl text-center text-white">
-                    French PLUS Advantage
+                    French Flow Advantage
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">

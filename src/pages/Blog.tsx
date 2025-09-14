@@ -79,7 +79,7 @@ const Blog = () => {
         <div className="container mx-auto px-4 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4">French PLUS Blog</Badge>
+              <Badge className="mb-4">French Flow Blog</Badge>
               <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
                 Your French Learning Journey
               </h1>

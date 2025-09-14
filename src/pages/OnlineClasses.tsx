@@ -18,7 +18,7 @@ const OnlineClasses = () => {
             </h1>
             <p className="text-xl text-french-blue/80 mb-8 max-w-3xl mx-auto">
               Learn French from the comfort of your home with our interactive online classes. 
-              Coming soon to French PLUS!
+              Coming soon to French Flow!
             </p>
           </div>
           
