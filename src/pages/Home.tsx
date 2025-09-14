@@ -17,44 +17,59 @@ import {
   Sparkles
 } from "lucide-react";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
+import heroIllustration from "@/assets/hero-illustration.png";
 import frenchClass from "@/assets/french-class.jpg";
 
 const Home = () => {
   return (
     <div className="min-h-screen pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20">
-            <MapPin className="w-4 h-4 mr-1" />
-            Dulwich, South East London
-          </Badge>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-foreground">
-            Rediscover Your
-            <span className="block text-primary mt-2">
-              French Confidence
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Transform your rusty French into fluent conversation with our 6-week intensive blocks. 
-            Perfect for returners ready to embrace their French journey again.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-              <Link to="/contact">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Book Free 20-min Chat
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
-              <Link to="/lessons">
-                Learn More
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </Button>
+      <section className="py-20 gradient-subtle">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            {/* Left: Copy */}
+            <div className="text-center lg:text-left">
+              <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20 inline-flex items-center">
+                <span className="mr-2">🇫🇷</span>
+                Dulwich, South East London
+              </Badge>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-heading font-bold mb-6 leading-tight text-foreground">
+                Love French again with classes in Dulwich
+              </h1>
+              
+              <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 leading-relaxed">
+                Friendly, small-group French lessons in Dulwich. Our 6-week conversation blocks help you
+                rebuild confidence and speak naturally in real-life situations.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button size="lg" className="text-lg px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 hover:shadow-lg transition-all duration-300 group" asChild>
+                  <Link to="/contact">
+                    <MessageCircle className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                    Book Free 30-minute Assessment
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4 hover:scale-105 hover:shadow-lg transition-all duration-300 group" asChild>
+                  <Link to="/lessons">
+                    Learn More
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Right: Imagery */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+                <img 
+                  src={heroIllustration}
+                  alt="Learning French illustration"
+                  className="w-full h-[460px] object-cover"
+                />
+              </div>
+              {/* Removed overlay image */}
+            </div>
           </div>
         </div>
       </section>
@@ -72,26 +87,26 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-blue-500/25 group-hover:rotate-12 transition-all duration-500">
+                  <Users className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-blue-600 transition-colors duration-300">
                   Small Groups
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Maximum 6 students for personalized attention and confident practice
+                  Maximum 8 students for personalized attention and confident practice
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Clock className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-green-500/25 group-hover:rotate-12 transition-all duration-500">
+                  <Clock className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-green-600 transition-colors duration-300">
                   90-Minute Lessons
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -100,12 +115,12 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Award className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-yellow-500/25 group-hover:rotate-12 transition-all duration-500">
+                  <Award className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-yellow-600 transition-colors duration-300">
                   6-Week Blocks
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -114,12 +129,12 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-sm hover:shadow-md transition-all duration-300 bg-card border border-border/50">
+            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MessageCircle className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-purple-500/25 group-hover:rotate-12 transition-all duration-500">
+                  <MessageCircle className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-purple-600 transition-colors duration-300">
                   Conversation Focus
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -149,17 +164,23 @@ const Home = () => {
               </div>
               
               <ul className="space-y-4">
-                <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-primary mr-4 flex-shrink-0" />
-                  <span className="text-foreground">MA in French Literature & Linguistics</span>
+                <li className="flex items-center group">
+                  <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-emerald-500/25 group-hover:scale-110 transition-all duration-300">
+                    <CheckCircle className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-foreground group-hover:text-emerald-600 transition-colors duration-300">MA in French Literature & Linguistics</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-primary mr-4 flex-shrink-0" />
-                  <span className="text-foreground">Certified DELF/DALF examiner</span>
+                <li className="flex items-center group">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-blue-500/25 group-hover:scale-110 transition-all duration-300">
+                    <CheckCircle className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-foreground group-hover:text-blue-600 transition-colors duration-300">Certified DELF/DALF examiner</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-primary mr-4 flex-shrink-0" />
-                  <span className="text-foreground">Specializing in adult conversation classes</span>
+                <li className="flex items-center group">
+                  <div className="w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-rose-500/25 group-hover:scale-110 transition-all duration-300">
+                    <CheckCircle className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-foreground group-hover:text-rose-600 transition-colors duration-300">Specializing in adult conversation classes</span>
                 </li>
               </ul>
               
@@ -190,7 +211,14 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-8">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-accent fill-current" />
+                <Star 
+                  key={i} 
+                  className="w-6 h-6 text-yellow-400 fill-current hover:scale-125 transition-transform duration-300 hover:drop-shadow-lg" 
+                  style={{ 
+                    animationDelay: `${i * 0.1}s`,
+                    animation: 'pulse 2s ease-in-out infinite'
+                  }}
+                />
               ))}
             </div>
             <blockquote className="text-2xl md:text-3xl font-heading italic mb-8 leading-relaxed text-foreground">
@@ -212,16 +240,16 @@ const Home = () => {
             Ready to Rediscover Your French?
           </h2>
           <p className="text-xl mb-10 text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Start with a free 20-minute consultation to discuss your goals and assess your current level
+            Start with a free 30-minute assessment to establish your current level and discuss your goals
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
               <Link to="/contact">
-                Book Your Free Chat
+                Book Your Free Assessment
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
               <Link to="/pricing">
                 View Pricing
               </Link>

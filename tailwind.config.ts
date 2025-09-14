@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ['Georgia', 'Times New Roman', 'serif'],
-        body: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['Nunito', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

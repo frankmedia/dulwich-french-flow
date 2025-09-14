@@ -22,6 +22,8 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About Me", path: "/about" },
+    { name: "6 Weeks Course", path: "/lessons" },
+    { name: "Pricing", path: "/pricing" },
     { name: "Contact", path: "/contact" },
     { name: "Blog", path: "/blog" }
   ];
@@ -60,12 +62,6 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button size="sm" className="ml-4 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-              <Link to="/contact">
-                <Phone className="w-4 h-4 mr-2" />
-                Free Chat
-              </Link>
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -116,14 +112,6 @@ const Navigation = () => {
                         {item.name}
                       </Link>
                     ))}
-                    <div className="pt-4">
-                      <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg" asChild>
-                        <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                          <Phone className="w-4 h-4 mr-2" />
-                          Free Chat
-                        </Link>
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </div>

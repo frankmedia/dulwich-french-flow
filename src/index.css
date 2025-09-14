@@ -54,7 +54,7 @@ All colors MUST be HSL.
 
     /* Typography */
     --font-heading: 'Georgia', 'Times New Roman', serif;
-    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-body: 'Nunito', 'Inter', system-ui, -apple-system, sans-serif;
 
     --radius: 0.5rem;
 
@@ -140,6 +140,26 @@ All colors MUST be HSL.
 
   .gradient-accent {
     background: var(--gradient-accent);
+  }
+
+  /* Soft background breaker utilities (expects /images/bg-breaker.png) */
+  .bg-breaker-right {
+    background-image: url('/images/bg-breaker.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 600px auto;
+  }
+  .bg-breaker-left {
+    background-image: url('/images/bg-breaker.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 600px auto;
+  }
+  .bg-breaker-bottom {
+    background-image: url('/images/bg-breaker.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 600px auto;
   }
 
   .shadow-elegant {

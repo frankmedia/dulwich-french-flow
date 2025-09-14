@@ -18,15 +18,15 @@ import frenchClass from "@/assets/french-class.jpg";
 
 const About = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Hero Section */}
       <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4">Bonjour!</Badge>
               <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                I'm Claire, Your French Language Guide
+                I'm Barbara, Your French Language Guide
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 With a passion for the French language and culture that spans over a decade, 
@@ -69,7 +69,7 @@ const About = () => {
 
       {/* Qualifications */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Education & Qualifications
@@ -124,7 +124,7 @@ const About = () => {
 
       {/* My Approach */}
       <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-elegant">
@@ -197,7 +197,7 @@ const About = () => {
 
       {/* Personal Touch */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-6xl mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
@@ -244,12 +244,12 @@ const About = () => {
 
       {/* Call to Action */}
       <section className="py-20 gradient-hero text-white">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
             Ready to Begin Your French Journey?
           </h2>
           <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Let's start with a friendly 20-minute chat about your French goals
+            Let's start with a friendly 30-minute chat about your French goals
           </p>
           
           <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
