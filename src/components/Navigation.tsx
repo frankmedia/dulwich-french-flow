@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import frenchFlowLogo from "@/assets/french-flow-logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isClassesDropdownOpen, setIsClassesDropdownOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -21,9 +22,15 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "About Me", path: "/about" },
-    { name: "6 Weeks Course", path: "/lessons" },
-    { name: "Pricing", path: "/pricing" },
+    { 
+      name: "Classes", 
+      path: "/classes",
+      dropdown: [
+        { name: "Adults", path: "/classes#adults" },
+        { name: "Exam Prep", path: "/classes#exam-prep" }
+      ]
+    },
+    { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
     { name: "Blog", path: "/blog" }
   ];
@@ -49,18 +56,55 @@ const Navigation = () => {
           {/* Desktop Navigation - Horizontal below logo */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={cn(
-                  "font-medium transition-colors hover:text-primary text-sm uppercase tracking-wider",
-                  location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
+              <div key={item.path} className="relative">
+                {item.dropdown ? (
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setIsClassesDropdownOpen(true)}
+                    onMouseLeave={() => setIsClassesDropdownOpen(false)}
+                  >
+                    <Link
+                      to={item.path}
+                      className={cn(
+                        "font-medium transition-colors hover:text-primary text-sm uppercase tracking-wider flex items-center gap-1 py-2",
+                        location.pathname === item.path
+                          ? "text-primary"
+                          : "text-muted-foreground"
+                      )}
+                    >
+                      {item.name}
+                      <ChevronDown className="w-3 h-3" />
+                    </Link>
+                    
+                    {/* Dropdown Menu */}
+                    {isClassesDropdownOpen && (
+                      <div className="absolute top-full left-0 w-48 bg-background/95 backdrop-blur-md border border-border/20 rounded-lg shadow-lg py-2 z-50">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.path}
+                            to={dropdownItem.path}
+                            className="block px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={cn(
+                      "font-medium transition-colors hover:text-primary text-sm uppercase tracking-wider",
+                      location.pathname === item.path
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    {item.name}
+                  </Link>
                 )}
-              >
-                {item.name}
-              </Link>
+              </div>
             ))}
           </div>
 
@@ -98,19 +142,34 @@ const Navigation = () => {
                   
                   <div className="space-y-4 text-center w-full">
                     {navItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        onClick={() => setIsMenuOpen(false)}
-                        className={cn(
-                          "block py-3 font-medium text-lg transition-colors uppercase tracking-wider",
-                          location.pathname === item.path
-                            ? "text-primary"
-                            : "text-muted-foreground hover:text-primary"
+                      <div key={item.path}>
+                        <Link
+                          to={item.path}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={cn(
+                            "block py-3 font-medium text-lg transition-colors uppercase tracking-wider",
+                            location.pathname === item.path
+                              ? "text-primary"
+                              : "text-muted-foreground hover:text-primary"
+                          )}
+                        >
+                          {item.name}
+                        </Link>
+                        {item.dropdown && (
+                          <div className="ml-4 space-y-2">
+                            {item.dropdown.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.path}
+                                to={dropdownItem.path}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            ))}
+                          </div>
                         )}
-                      >
-                        {item.name}
-                      </Link>
+                      </div>
                     ))}
                   </div>
                 </div>

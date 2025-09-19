@@ -379,37 +379,6 @@ This message was sent from the French Flow website contact form.`
                 </CardContent>
               </Card>
 
-              <Card className="shadow-soft">
-                <CardHeader>
-                  <CardTitle className="text-xl font-heading flex items-center">
-                    <Clock className="w-5 h-5 mr-2 text-primary" />
-                    Availability
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center py-2 border-b border-border">
-                      <span className="font-medium">Monday - Thursday</span>
-                      <span className="text-muted-foreground">10:00 AM - 8:00 PM</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-border">
-                      <span className="font-medium">Friday</span>
-                      <span className="text-muted-foreground">10:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-border">
-                      <span className="font-medium">Saturday</span>
-                      <span className="text-muted-foreground">9:00 AM - 2:00 PM</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span className="font-medium">Sunday</span>
-                      <span className="text-muted-foreground">Closed</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-4">
-                    Consultation calls available outside these hours by arrangement.
-                  </p>
-                </CardContent>
-              </Card>
 
               <Card className="shadow-soft">
                 <CardHeader>
@@ -423,10 +392,6 @@ This message was sent from the French Flow website contact form.`
                     <div>
                       <div className="font-medium mb-1">Email</div>
                       <p className="text-muted-foreground">barbara@frenchflow.co.uk</p>
-                    </div>
-                    <div>
-                      <div className="font-medium mb-1">Phone</div>
-                      <p className="text-muted-foreground">07812 345 678</p>
                     </div>
                     <div>
                       <div className="font-medium mb-1">Response Time</div>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { 
@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Coffee,
   BookOpen,
+  Calendar,
   Heart,
   Sparkles
 } from "lucide-react";
@@ -29,18 +30,14 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             {/* Left: Copy */}
             <div className="text-center lg:text-left">
-              <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20 inline-flex items-center">
-                <span className="mr-2">🇫🇷</span>
-                Dulwich, South East London
-              </Badge>
-              
               <h1 className="text-4xl md:text-5xl lg:text-5xl font-heading font-bold mb-6 leading-tight text-foreground">
-                Love French again with classes in Dulwich
+                Love learning French in South East London
               </h1>
               
               <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 leading-relaxed">
-                Friendly, small-group French lessons in Dulwich. Our 6-week conversation blocks help you
-                rebuild confidence and speak naturally in real-life situations.
+                Dreaming of dusting off your French and enjoying it again in a warm and friendly local group?<br/><br/>
+                Want your child to feel confident, motivated, and shine in their GCSE or A-level?<br/><br/>
+                I offer group or individual classes tailored to your needs.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -51,7 +48,7 @@ const Home = () => {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 py-4 hover:scale-105 hover:shadow-lg transition-all duration-300 group" asChild>
-                  <Link to="/lessons">
+                  <Link to="/classes">
                     Learn More
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
@@ -69,6 +66,124 @@ const Home = () => {
                 />
               </div>
               {/* Removed overlay image */}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Class Types Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-gray-900">
+              Choose Your French Journey
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Whether you're an adult looking to reconnect with French or a student preparing for exams, we have the perfect path for you.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Adult Classes Box */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div className="text-center">
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                    <Users className="w-12 h-12 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-heading font-bold text-gray-900 mb-4">
+                    Adult Classes
+                  </h3>
+                  
+                  <div className="space-y-4 mb-8 text-left">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Group Classes</h4>
+                        <p className="text-gray-600 text-sm">Join our warm and friendly small groups (max 8 students) for conversation practice and structured learning.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">1:1 Sessions</h4>
+                        <p className="text-gray-600 text-sm">Personalized lessons tailored to your specific goals, schedule, and learning pace.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <Button asChild className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                      <Link to="/classes#adults" className="flex items-center justify-center gap-2">
+                        <Users className="w-4 h-4" />
+                        Explore Adult Classes
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                    
+                    <Button variant="outline" asChild className="w-full border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300">
+                      <Link to="/contact" className="flex items-center justify-center gap-2">
+                        <MessageCircle className="w-4 h-4" />
+                        Book Free Assessment
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Exam Prep Box */}
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div className="text-center">
+                  <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                    <Award className="w-12 h-12 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-heading font-bold text-gray-900 mb-4">
+                    Exam Preparation
+                  </h3>
+                  
+                  <div className="space-y-4 mb-8 text-left">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">GCSE French</h4>
+                        <p className="text-gray-600 text-sm">Comprehensive preparation covering all exam components - speaking, listening, reading, and writing.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">A-Level French</h4>
+                        <p className="text-gray-600 text-sm">Advanced preparation with focus on literature, culture, and complex language structures.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <Button asChild className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                      <Link to="/classes#exam-prep" className="flex items-center justify-center gap-2">
+                        <Award className="w-4 h-4" />
+                        Explore Exam Prep
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                    
+                    <Button variant="outline" asChild className="w-full border-emerald-200 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-300 transition-all duration-300">
+                      <Link to="/contact" className="flex items-center justify-center gap-2">
+                        <MessageCircle className="w-4 h-4" />
+                        Book Free Assessment
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -26,23 +26,20 @@ const About = () => {
             <div>
               <Badge className="mb-4">Bonjour!</Badge>
               <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                I'm Barbara, Your French Language Guide
+                About Me
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                With a passion for the French language and culture that spans over a decade, 
-                I've dedicated my career to helping adults rediscover the joy of speaking French. 
-                Based in the heart of Dulwich, I understand the unique journey of returning to 
-                a language you once knew.
+                My name is Barbara. I am a native French speaker, and I grew up in the gorgeous French region of Savoie, where I enjoyed peaceful lake swims in summer and exhilarating skiing in winter.
               </p>
               
               <div className="flex items-center space-x-4 mb-8">
                 <div className="flex items-center text-muted-foreground">
                   <MapPin className="w-4 h-4 mr-2" />
-                  <span>Dulwich, London</span>
+                  <span>SE London</span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <Users className="w-4 h-4 mr-2" />
-                  <span>10+ Years Experience</span>
+                  <span>20+ Years in London</span>
                 </div>
               </div>
               
@@ -58,7 +55,7 @@ const About = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-elegant">
                 <img 
                   src={teacherPortrait} 
-                  alt="Claire, French teacher"
+                  alt="Barbara, French teacher from Savoie"
                   className="w-full h-[500px] object-cover"
                 />
               </div>
@@ -67,15 +64,15 @@ const About = () => {
         </div>
       </section>
 
-      {/* Qualifications */}
+      {/* My Experience */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Education & Qualifications
+              My Experience
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Combining academic excellence with practical teaching experience
+              Fully qualified French teacher with extensive experience across all levels
             </p>
           </div>
 
@@ -85,11 +82,11 @@ const About = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <GraduationCap className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">MA French Literature</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2">QTS & PGCE</h3>
                 <p className="text-muted-foreground mb-4">
-                  University of Cambridge, specializing in 20th century French literature and linguistics
+                  Qualified Teacher Status from Tes Institute and PGCE from University of East London
                 </p>
-                <Badge variant="secondary">2010</Badge>
+                <Badge variant="secondary">Fully Qualified</Badge>
               </CardContent>
             </Card>
 
@@ -98,11 +95,11 @@ const About = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">DELF/DALF Examiner</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2">DAEFLE Diploma</h3>
                 <p className="text-muted-foreground mb-4">
-                  Certified examiner for official French proficiency tests
+                  Diploma in Teaching French as a Foreign Language from Alliance Française de Paris
                 </p>
-                <Badge variant="secondary">Certified 2015</Badge>
+                <Badge variant="secondary">Specialized</Badge>
               </CardContent>
             </Card>
 
@@ -111,11 +108,11 @@ const About = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">PGCE Modern Languages</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2">BA Business & Languages</h3>
                 <p className="text-muted-foreground mb-4">
-                  Postgraduate Certificate in Education, specializing in adult education
+                  Completed in London, combining business knowledge with language expertise
                 </p>
-                <Badge variant="secondary">2012</Badge>
+                <Badge variant="secondary">London Graduate</Badge>
               </CardContent>
             </Card>
           </div>
@@ -138,73 +135,37 @@ const About = () => {
             
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-                My Teaching Philosophy
+                Why I Love Languages
               </h2>
               
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Heart className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold text-lg mb-2">
-                      Confidence Over Perfection
-                    </h3>
-                    <p className="text-muted-foreground">
-                      I believe that confidence comes before perfection. My classes focus on 
-                      getting you comfortable speaking French, making mistakes, and learning 
-                      from them in a supportive environment.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Globe className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold text-lg mb-2">
-                      Cultural Immersion
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Language is inseparable from culture. We explore French customs, 
-                      current events, and cultural nuances to give you authentic 
-                      communication skills.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Coffee className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold text-lg mb-2">
-                      Relaxed Yet Structured
-                    </h3>
-                    <p className="text-muted-foreground">
-                      While our lessons follow a clear structure, the atmosphere is 
-                      relaxed and conversational - like chatting with friends in a 
-                      Parisian café.
-                    </p>
-                  </div>
-                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  There's nothing more rewarding than the moment a language starts to make sense: when you can have your first real conversation, understand a song, or watch a film in its original version and pick up on the humour and cultural nuances.
+                </p>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Learning languages keeps your brain young and curious, which means it's never too early or too late to start. With the right support and encouragement, a new language rapidly starts to flow and feel natural!
+                </p>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Languages have brought me so much joy over the years. They've taken me to some incredible places, and have allowed me to not just meet, but truly connect with people from different cultures. Languages will widen your horizons, and let you experience cultures from the inside. That's the gift I want to share.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Personal Touch */}
+      {/* My Mission */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-6xl mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                Beyond the Classroom
+                My Mission
               </h2>
               <p className="text-xl text-muted-foreground">
-                A little more about what drives my passion for French
+                As Emma Bridgewater says, "Spend your life doing something that you really approve of."
               </p>
             </div>
 
@@ -212,29 +173,19 @@ const About = () => {
               <CardContent className="p-8 md:p-12">
                 <div className="prose prose-lg max-w-none">
                   <p className="text-lg leading-relaxed mb-6">
-                    My love affair with French began during a summer in Provence when I was 18. 
-                    What started as a language exchange became a lifelong passion that has taken 
-                    me from the boulevards of Paris to the vineyards of Bordeaux.
+                    For me, that's teaching not just languages, but the beauty of languages. I see it as both a joy and a privilege to help others discover the confidence, opportunities, and connections that learning French can bring.
                   </p>
                   
                   <p className="text-lg leading-relaxed mb-6">
-                    I've lived in France for three years, teaching English while perfecting my 
-                    own French through daily conversations with locals. This experience taught 
-                    me the difference between academic French and the living, breathing language 
-                    that connects people.
+                    Languages are the best communication tool we've ever invented, and they open so many doors - come and discover what adventures await on the other side!
                   </p>
                   
-                  <p className="text-lg leading-relaxed mb-6">
-                    When I'm not teaching, you'll find me exploring London's French patisseries, 
-                    organizing French film nights for my students, or planning cultural trips to 
-                    France. I believe learning French should be as enjoyable as a leisurely 
-                    afternoon in a French café.
-                  </p>
-                  
-                  <blockquote className="border-l-4 border-primary pl-6 italic text-xl text-muted-foreground">
-                    "Teaching French isn't just my profession - it's sharing a culture 
-                    and language that has enriched my life immeasurably."
-                  </blockquote>
+                  <div className="bg-primary/5 p-6 rounded-lg border-l-4 border-primary">
+                    <h3 className="font-heading font-semibold text-lg mb-4">My Teaching Experience</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      I've taught French in Secondary Schools (KS3 to KS5), in Further Education (College and University) and as the founder and leader of a French after-school club. I also work 1:1 with children (from age 4), GCSE and A-level students, and adults who want to refresh or build their French.
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
