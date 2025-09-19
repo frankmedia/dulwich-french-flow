@@ -23,10 +23,20 @@ import {
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
 import heroIllustration from "@/assets/hero-illustration.jpg";
 import frenchClass from "@/assets/french-class.jpg";
+import SEO from "@/components/SEO";
+import { businessStructuredData, testimonialStructuredData } from "@/lib/structuredData";
 
 const Home = () => {
   return (
-    <div className="min-h-screen pt-32">
+    <>
+      <SEO
+        title="French Flow - French Lessons in South East London"
+        description="Rediscover your French confidence with French Flow. Small group and 1:1 French lessons for adults in South East London. GCSE and A-Level exam preparation available. Book your free 30-minute assessment."
+        keywords="French lessons, French classes, French teacher, South East London, Dulwich, Forest Hill, GCSE French, A-Level French, French conversation, French exam preparation, native French speaker"
+        url="/"
+        structuredData={[businessStructuredData, testimonialStructuredData]}
+      />
+      <div className="min-h-screen pt-32">
       {/* Hero Section */}
       <section className="py-20 gradient-subtle">
         <div className="container mx-auto px-4">
@@ -401,7 +411,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

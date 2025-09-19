@@ -15,10 +15,18 @@ import {
 } from "lucide-react";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
 import frenchClass from "@/assets/french-class.jpg";
+import SEO from "@/components/SEO";
 
 const About = () => {
   return (
-    <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+    <>
+      <SEO
+        title="About Barbara - Your French Teacher in South East London"
+        description="Meet Barbara, your native French teacher in South East London. QTS and PGCE qualified, DAEFLE certified with Alliance française de Paris. From Savoie to London, bringing French culture and language to life."
+        keywords="French teacher, Barbara, native French speaker, QTS, PGCE, DAEFLE, Alliance française, Savoie, South East London, French culture, French language teacher"
+        url="/about"
+      />
+      <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Hero Section */}
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-6xl mx-auto">
@@ -216,7 +224,8 @@ const About = () => {
           </Button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

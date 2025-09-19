@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, Clock, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 
 interface BlogPost {
   slug: string;
@@ -88,7 +89,14 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+    <>
+      <SEO
+        title={post?.title || "French Learning Article"}
+        description={post?.content ? post.content.substring(0, 160) + "..." : "Read this French learning article from French Flow, your local French teacher in South East London."}
+        keywords="French learning, French language, French culture, French tips, French teacher, South East London, French lessons"
+        url={`/blog/${slug}`}
+      />
+      <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Back Navigation */}
       <div className="container mx-auto px-4 py-8">
         <Button variant="ghost" asChild>
@@ -172,7 +180,8 @@ const BlogPost = () => {
           </div>
         </div>
       </article>
-    </div>
+      </div>
+    </>
   );
 };
 

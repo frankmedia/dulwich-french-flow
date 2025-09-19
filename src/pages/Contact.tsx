@@ -20,6 +20,7 @@ import {
   HelpCircle
 } from "lucide-react";
 import frenchBooks from "@/assets/french-books.png";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -138,7 +139,14 @@ This message was sent from the French Flow website contact form.`
   };
 
   return (
-    <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+    <>
+      <SEO
+        title="Contact French Flow - Book Your Free 30-Minute Assessment"
+        description="Ready to start your French journey? Contact Barbara for a free 30-minute assessment. Get in touch to discuss your French learning goals and find the perfect class for you in South East London."
+        keywords="contact French teacher, book French lesson, free French assessment, French consultation, South East London, French classes booking, French teacher contact"
+        url="/contact"
+      />
+      <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Hero Section */}
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
@@ -707,8 +715,8 @@ This message was sent from the French Flow website contact form.`
           </Card>
         </div>
       </section>
-
-    </div>
+      </div>
+    </>
   );
 };
 

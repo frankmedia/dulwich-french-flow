@@ -16,10 +16,18 @@ import {
   BookOpen,
   MessageCircle
 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Pricing = () => {
   return (
-    <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+    <>
+      <SEO
+        title="French Lessons Pricing - Affordable French Classes in South East London"
+        description="Transparent pricing for French lessons in South East London. Group classes from £20/session, 1:1 lessons from £45/session. GCSE and A-Level preparation available. Free 30-minute consultation included."
+        keywords="French lesson prices, French class costs, French teacher rates, GCSE French pricing, A-Level French pricing, affordable French lessons, South East London French classes"
+        url="/pricing"
+      />
+      <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Hero Section */}
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 text-center">
@@ -328,7 +336,8 @@ const Pricing = () => {
           </p>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

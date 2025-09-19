@@ -7,6 +7,8 @@ import Map from "@/components/Map";
 import eastDulwichLibrary from "@/assets/east-dulwich-library.jpg";
 import forestHillLibrary from "@/assets/forest-hill-library.jpg";
 import sydenhamLibrary from "@/assets/sydenham-library.jpg";
+import SEO from "@/components/SEO";
+import { courseStructuredData } from "@/lib/structuredData";
 
 const Classes = () => {
   const location = useLocation();
@@ -58,7 +60,15 @@ const Classes = () => {
   }, [location.hash]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-french-cream to-french-ivory" style={{ paddingTop: 'calc(5rem + 20px)' }}>
+    <>
+      <SEO
+        title="French Classes in South East London - Adult & Exam Preparation"
+        description="Join our French classes in South East London. Small group adult classes, 1:1 lessons, GCSE and A-Level exam preparation. Locations in East Dulwich, Forest Hill, and Sydenham. Book your free assessment."
+        keywords="French classes, French lessons, adult French classes, GCSE French, A-Level French, French exam preparation, East Dulwich, Forest Hill, Sydenham, South East London, French teacher"
+        url="/classes"
+        structuredData={courseStructuredData}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-french-cream to-french-ivory" style={{ paddingTop: 'calc(5rem + 20px)' }}>
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto text-center max-w-6xl">
@@ -467,7 +477,8 @@ const Classes = () => {
           </Button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

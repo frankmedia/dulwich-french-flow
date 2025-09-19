@@ -8,6 +8,7 @@ import {
   Clock, 
   ArrowRight
 } from "lucide-react";
+import SEO from "@/components/SEO";
 import blogHeader from "@/assets/blog-header.jpg";
 
 interface BlogPost {
@@ -73,7 +74,14 @@ const Blog = () => {
 
 
   return (
-    <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+    <>
+      <SEO
+        title="French Learning Blog - Tips, Culture & Language Insights"
+        description="Discover French language tips, cultural insights, and learning strategies on the French Flow blog. Expert advice from a native French teacher in South East London."
+        keywords="French learning blog, French language tips, French culture, French learning strategies, French teacher blog, French language advice, French learning resources"
+        url="/blog"
+      />
+      <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Hero Section */}
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-6xl mx-auto">
@@ -251,7 +259,8 @@ const Blog = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
