@@ -297,7 +297,7 @@ const Home = () => {
               <div>
                 <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20">Meet Your Teacher</Badge>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground leading-tight">
-                  Passionate About Bringing French Back to Life
+                  Passionate About Bringing French to Life
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   With over 10 years of experience teaching French to adults, I understand the unique 
