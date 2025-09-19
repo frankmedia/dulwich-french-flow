@@ -340,7 +340,7 @@ const Home = () => {
                 <img 
                   src={teacherPortrait} 
                   alt="French teacher in classroom"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[500px] object-cover object-top"
                 />
               </div>
             </div>
@@ -370,7 +370,7 @@ const Home = () => {
               use it. I'm now planning my first trip to France in decades!"
             </blockquote>
             <cite className="text-lg text-muted-foreground">
-              — Sarah M., Dulwich Village
+              - Sarah M., Dulwich Village
             </cite>
           </div>
         </div>

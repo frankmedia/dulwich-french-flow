@@ -180,7 +180,7 @@ This message was sent from the French Flow website contact form.`
                 <div className="w-8 h-6 bg-gradient-to-r from-blue-600 via-white to-red-600 rounded-sm shadow-lg"></div>
               </div>
               <p className="text-xl text-french-blue/80 max-w-2xl mx-auto">
-                Ready to begin your French journey? Drop me a line at <a href="mailto:barbara@frenchflow.co.uk" className="font-semibold text-french-blue hover:text-french-navy underline transition-colors">barbara@frenchflow.co.uk</a> or fill in the form below — I'll reply within 24 hours.
+                Ready to begin your French journey? Drop me a line at <a href="mailto:barbara@frenchflow.co.uk" className="font-semibold text-french-blue hover:text-french-navy underline transition-colors">barbara@frenchflow.co.uk</a> or fill in the form below. Merci !
               </p>
             </div>
 

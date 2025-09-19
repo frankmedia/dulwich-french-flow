@@ -315,7 +315,7 @@ const Pricing = () => {
             Ready to Invest in Your French?
           </h2>
           <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Start with our free consultation — a friendly 30-minute call about your French goals
+            Start with our free consultation - a friendly 30-minute call about your French goals
           </p>
           
           <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>

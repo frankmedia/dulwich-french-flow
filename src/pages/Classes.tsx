@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Calendar, Clock, BookOpen, Target, Award, MessageCircle, ArrowRight, CheckCircle, MapPin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Map from "@/components/Map";
 
 const Classes = () => {
   const location = useLocation();
+  const [selectedLocation, setSelectedLocation] = useState('east-dulwich');
 
   // Map locations data
   const mapLocations = [
@@ -67,7 +68,7 @@ const Classes = () => {
             </h1>
             <p className="text-xl text-french-blue/80 mb-8 max-w-4xl mx-auto leading-relaxed">
               I offer group and 1:1 French lessons in South East London, covering the areas of Forest Hill (SE23), Honor Oak (SE23), Dulwich (SE21), Sydenham (SE26), Crystal Palace (SE19), and Penge (SE20).<br/><br/>
-              If you're based outside South East London, we can chat about options — I also offer online classes.
+              If you're based outside South East London, we can chat about options - I also offer online classes.
             </p>
             
             <div className="mt-8">
@@ -235,7 +236,14 @@ const Classes = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Locations List */}
             <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
+              <div 
+                className={`bg-white rounded-xl p-6 shadow-lg border transition-all duration-300 cursor-pointer ${
+                  selectedLocation === 'east-dulwich' 
+                    ? 'border-blue-500 shadow-blue-200 shadow-lg' 
+                    : 'border-blue-100 hover:border-blue-300 hover:shadow-xl'
+                }`}
+                onMouseEnter={() => setSelectedLocation('east-dulwich')}
+              >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
@@ -248,7 +256,14 @@ const Classes = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
+              <div 
+                className={`bg-white rounded-xl p-6 shadow-lg border transition-all duration-300 cursor-pointer ${
+                  selectedLocation === 'forest-hill' 
+                    ? 'border-emerald-500 shadow-emerald-200 shadow-lg' 
+                    : 'border-blue-100 hover:border-emerald-300 hover:shadow-xl'
+                }`}
+                onMouseEnter={() => setSelectedLocation('forest-hill')}
+              >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
@@ -261,7 +276,14 @@ const Classes = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
+              <div 
+                className={`bg-white rounded-xl p-6 shadow-lg border transition-all duration-300 cursor-pointer ${
+                  selectedLocation === 'sydenham' 
+                    ? 'border-purple-500 shadow-purple-200 shadow-lg' 
+                    : 'border-blue-100 hover:border-purple-300 hover:shadow-xl'
+                }`}
+                onMouseEnter={() => setSelectedLocation('sydenham')}
+              >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
@@ -279,7 +301,7 @@ const Classes = () => {
             <div className="relative">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 {/* Real Map Component */}
-                <Map locations={mapLocations} />
+                <Map locations={mapLocations} selectedLocation={selectedLocation} />
                 
                 <p className="text-xs text-gray-500 mt-4 text-center">
                   Hover over locations to see images • Exact addresses provided upon booking
@@ -347,11 +369,11 @@ const Classes = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-french-blue/80">Per session:</span>
-                      <span className="font-bold text-lg text-french-navy">£50</span>
+                      <span className="font-bold text-lg text-french-navy">£40</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-french-blue/80">10-session package:</span>
-                      <span className="font-bold text-lg text-french-navy">£450</span>
+                      <span className="font-bold text-lg text-french-navy">£380</span>
                     </div>
                     <div className="text-sm text-french-blue/60 mt-3">
                       * All materials included
@@ -402,11 +424,11 @@ const Classes = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-french-blue/80">Per session:</span>
-                      <span className="font-bold text-lg text-french-navy">£60</span>
+                      <span className="font-bold text-lg text-french-navy">£50</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-french-blue/80">10-session package:</span>
-                      <span className="font-bold text-lg text-french-navy">£550</span>
+                      <span className="font-bold text-lg text-french-navy">£480</span>
                     </div>
                     <div className="text-sm text-french-blue/60 mt-3">
                       * All materials included

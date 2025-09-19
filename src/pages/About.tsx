@@ -56,7 +56,7 @@ const About = () => {
                 <img 
                   src={teacherPortrait} 
                   alt="Barbara, French teacher from Savoie"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[500px] object-cover object-top"
                 />
               </div>
             </div>
