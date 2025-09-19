@@ -15,7 +15,10 @@ import {
   BookOpen,
   Calendar,
   Heart,
-  Sparkles
+  Sparkles,
+  Target,
+  Trophy,
+  Flag
 } from "lucide-react";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
 import heroIllustration from "@/assets/hero-illustration.png";
@@ -189,74 +192,99 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-32 bg-secondary/20">
-        <div className="container mx-auto px-4">
+      {/* Why Choose French Flow Section */}
+      <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground">
-              Why Choose French Flow?
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-gray-900">
+              Why Choose French Flow
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Designed specifically for adults who want to reconnect with their French skills
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-blue-500/25 group-hover:rotate-12 transition-all duration-500">
-                  <Users className="w-10 h-10 text-white" />
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+            {/* 1. Build Real Confidence */}
+            <div className="group relative flex">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 group-hover:shadow-2xl transition-all duration-300 flex flex-col w-full">
+                <div className="text-center flex flex-col h-full">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                    <Trophy className="w-10 h-10 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-heading font-bold text-gray-900 mb-6">
+                    1. Build Real Confidence
+                  </h3>
+                  
+                  <div className="space-y-4 text-left flex-grow">
+                    <p className="text-gray-700 leading-relaxed">
+                      We build confidence to use French in travel, work, or social settings from day one.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Concepts are explained simply, and mistakes are welcomed as stepping stones.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      GCSE and A-level students build and practise exam-smart strategies for success.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-blue-600 transition-colors duration-300">
-                  Small Groups
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Maximum 8 students for personalized attention and confident practice
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-green-500/25 group-hover:rotate-12 transition-all duration-500">
-                  <Clock className="w-10 h-10 text-white" />
+            {/* 2. Small Groups, Personalised Attention */}
+            <div className="group relative flex">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 group-hover:shadow-2xl transition-all duration-300 flex flex-col w-full">
+                <div className="text-center flex flex-col h-full">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                    <Users className="w-10 h-10 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-heading font-bold text-gray-900 mb-6">
+                    2. Small Groups, Personalised Attention
+                  </h3>
+                  
+                  <div className="space-y-4 text-left flex-grow">
+                    <p className="text-gray-700 leading-relaxed">
+                      Classes are small (max 8), ensuring every learner gets individual support.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Tailored marking and feedback, with clear, actionable next steps.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Encourages participation and rapid progress, and reduces anxiety about speaking.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-green-600 transition-colors duration-300">
-                  90-Minute Lessons
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Immersive sessions that give you time to really get into French flow
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-yellow-500/25 group-hover:rotate-12 transition-all duration-500">
-                  <Award className="w-10 h-10 text-white" />
+            {/* 3. Culture Meets Language */}
+            <div className="group relative flex">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 group-hover:shadow-2xl transition-all duration-300 flex flex-col w-full">
+                <div className="text-center flex flex-col h-full">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                    <Flag className="w-10 h-10 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-heading font-bold text-gray-900 mb-6">
+                    3. Culture Meets Language
+                  </h3>
+                  
+                  <div className="space-y-4 text-left flex-grow">
+                    <p className="text-gray-700 leading-relaxed">
+                      Lessons connect French language learning with culture, music, film, and real-life contexts.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Makes learning more relatable, memorable and enjoyable, not just grammar drills.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Students leave with both language skills and cultural insight.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-yellow-600 transition-colors duration-300">
-                  6-Week Blocks
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Structured progression with clear goals and measurable results
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-500 bg-card border border-border/50 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-purple-500/25 group-hover:rotate-12 transition-all duration-500">
-                  <MessageCircle className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-purple-600 transition-colors duration-300">
-                  Conversation Focus
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Build real confidence through practical, engaging conversations
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
