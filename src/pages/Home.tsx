@@ -37,9 +37,9 @@ const Home = () => {
                 Love learning French in South East London
               </h1>
               
-              <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 leading-relaxed">
-                Dreaming of dusting off your French and enjoying it again in a warm and friendly local group?<br/><br/>
-                Want your child to feel confident, motivated, and shine in their GCSE or A-level?<br/><br/>
+              <p className="text-lg md:text-xl mb-10 text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 leading-tight">
+                Dreaming of dusting off your French and enjoying it again in a warm and friendly local group?<br/>
+                Want your child to feel confident, motivated, and shine in their GCSE or A-level?<br/>
                 I offer group or individual classes tailored to your needs.
               </p>
               
@@ -65,7 +65,7 @@ const Home = () => {
                 <img 
                   src={heroIllustration}
                   alt="Learning French illustration"
-                  className="w-full h-[460px] object-cover"
+                  className="w-full h-[370px] object-cover"
                 />
               </div>
               {/* Removed overlay image */}
