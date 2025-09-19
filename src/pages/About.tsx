@@ -28,8 +28,14 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
                 About Me
               </h1>
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                Bonjour ! My name is Barbara. I am a native French speaker, and I grew up in the gorgeous French region of Savoie, where I enjoyed peaceful lake swims in summer and exhilarating skiing in winter.
+              </p>
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                My love story with London began on a school trip when I was 14 years old, and I came back a few years later to complete my BA in Business and Languages. The rest is history, and I have now called London my home for over twenty years. During this time, I've put down roots in SE London, where I live with my husband and our three daughters.
+              </p>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                My name is Barbara. I am a native French speaker, and I grew up in the gorgeous French region of Savoie, where I enjoyed peaceful lake swims in summer and exhilarating skiing in winter.
+                I still love going back to Savoie to spend time with my family there and, together with my children, make the most of everything this beautiful region has to offer.
               </p>
               
               <div className="flex items-center space-x-4 mb-8">
@@ -56,7 +62,7 @@ const About = () => {
                 <img 
                   src={teacherPortrait} 
                   alt="Barbara, French teacher from Savoie"
-                  className="w-full h-[500px] object-cover object-top"
+                  className="w-full h-[560px] object-cover object-top"
                 />
               </div>
             </div>
@@ -164,14 +170,14 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
                 My Mission
               </h2>
-              <p className="text-xl text-muted-foreground">
-                As Emma Bridgewater says, "Spend your life doing something that you really approve of."
-              </p>
             </div>
 
             <Card className="shadow-elegant">
               <CardContent className="p-8 md:p-12">
                 <div className="prose prose-lg max-w-none">
+                  <p className="text-lg leading-relaxed mb-6">
+                    As Emma Bridgewater says, "Spend your life doing something that you really approve of."
+                  </p>
                   <p className="text-lg leading-relaxed mb-6">
                     For me, that's teaching not just languages, but the beauty of languages. I see it as both a joy and a privilege to help others discover the confidence, opportunities, and connections that learning French can bring.
                   </p>
