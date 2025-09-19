@@ -21,7 +21,7 @@ import {
   Flag
 } from "lucide-react";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
-import heroIllustration from "@/assets/hero-illustration.png";
+import heroIllustration from "@/assets/hero-illustration.jpg";
 import frenchClass from "@/assets/french-class.jpg";
 
 const Home = () => {
@@ -323,7 +323,7 @@ const Home = () => {
                   <div className="w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-rose-500/25 group-hover:scale-110 transition-all duration-300">
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-foreground group-hover:text-rose-600 transition-colors duration-300">Specializing in adult conversation classes</span>
+                  <span className="text-foreground group-hover:text-rose-600 transition-colors duration-300">Specialising in adult conversation classes</span>
                 </li>
               </ul>
               

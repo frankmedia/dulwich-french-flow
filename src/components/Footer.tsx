@@ -11,17 +11,13 @@ const Footer = () => {
           <nav className="flex flex-wrap items-center gap-4 justify-center md:justify-end">
             <Link to="/" className="hover:text-primary">Home</Link>
             <span className="opacity-50">·</span>
+            <Link to="/classes" className="hover:text-primary">Classes</Link>
+            <span className="opacity-50">·</span>
             <Link to="/about" className="hover:text-primary">About</Link>
             <span className="opacity-50">·</span>
-            <Link to="/lessons" className="hover:text-primary">6 Weeks Course</Link>
-            <span className="opacity-50">·</span>
-            <Link to="/online-classes" className="hover:text-primary">Online Classes</Link>
-            <span className="opacity-50">·</span>
-            <Link to="/pricing" className="hover:text-primary">Pricing</Link>
+            <Link to="/contact" className="hover:text-primary">Contact</Link>
             <span className="opacity-50">·</span>
             <Link to="/blog" className="hover:text-primary">Blog</Link>
-            <span className="opacity-50">·</span>
-            <Link to="/contact" className="hover:text-primary">Contact</Link>
             <span className="opacity-50">·</span>
             <Link to="/terms" className="hover:text-primary">Terms & Conditions</Link>
             <span className="opacity-50">·</span>

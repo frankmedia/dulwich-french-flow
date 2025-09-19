@@ -156,7 +156,7 @@ const OnlineClasses = () => {
                 <p>
                   What sets me apart is my commitment to creating a warm, supportive learning environment 
                   where you can build confidence and actually enjoy speaking French again. No intimidating 
-                  classrooms or one-size-fits-all approaches - just personalized, effective teaching.
+                  classrooms or one-size-fits-all approaches - just personalised, effective teaching.
                 </p>
                 <p>
                   When I'm not teaching, you'll find me exploring the local cafes and markets, 
@@ -212,7 +212,7 @@ const OnlineClasses = () => {
               What My Students Say
             </h2>
             <p className="text-xl text-french-blue/80 max-w-3xl mx-auto">
-              Real feedback from students who've transformed their French with local, personalized teaching.
+              Real feedback from students who've transformed their French with local, personalised teaching.
             </p>
           </div>
 
@@ -335,7 +335,7 @@ const OnlineClasses = () => {
                 </div>
                 <CardTitle className="text-xl text-french-navy">Small Group Sessions</CardTitle>
                 <CardDescription className="text-french-blue/70">
-                  Interactive classes with maximum 8 students for personalized attention
+                  Interactive classes with maximum 8 students for personalised attention
                 </CardDescription>
               </CardHeader>
             </Card>

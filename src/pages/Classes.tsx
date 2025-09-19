@@ -3,9 +3,38 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Users, Calendar, Clock, BookOpen, Target, Award, MessageCircle, ArrowRight, CheckCircle, MapPin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Map from "@/components/Map";
 
 const Classes = () => {
   const location = useLocation();
+
+  // Map locations data
+  const mapLocations = [
+    {
+      id: 'east-dulwich',
+      name: 'East Dulwich',
+      address: 'Grove Vale Library, 18-22 Grove Vale, East Dulwich, Southwark, Surrey, SE22 8EF',
+      coordinates: [51.4614, -0.0806] as [number, number],
+      color: 'blue',
+      image: '/src/assets/east-dulwich-library.jpg'
+    },
+    {
+      id: 'forest-hill',
+      name: 'Forest Hill',
+      address: 'Forest Hill Library, Dartmouth Rd, London SE23 3HZ',
+      coordinates: [51.4394, -0.0542] as [number, number],
+      color: 'emerald',
+      image: '/src/assets/forest-hill-library.jpg'
+    },
+    {
+      id: 'sydenham',
+      name: 'Sydenham',
+      address: 'Sydenham Library, 210 Sydenham Rd, London SE26 5SE',
+      coordinates: [51.4269, -0.0542] as [number, number],
+      color: 'purple',
+      image: '/src/assets/sydenham-library.jpg'
+    }
+  ];
 
   useEffect(() => {
     // Handle anchor scrolling when component mounts or hash changes
@@ -70,7 +99,7 @@ const Classes = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             {/* Group Classes */}
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-blue-50 to-indigo-50">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden">
               <CardHeader className="pb-6">
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Users className="w-8 h-8 text-white" />
@@ -102,10 +131,30 @@ const Classes = () => {
                   </div>
                 </div>
               </CardContent>
+              
+              {/* Pricing Section */}
+              <div className="bg-white text-french-navy p-6 mt-6 border-t border-gray-200">
+                <div className="text-center">
+                  <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">6-week block:</span>
+                      <span className="font-bold text-lg text-french-navy">£120</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">Per session:</span>
+                      <span className="font-bold text-lg text-french-navy">£20</span>
+                    </div>
+                    <div className="text-sm text-french-blue/60 mt-3">
+                      * All materials included
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
 
             {/* 1:1 Sessions */}
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-purple-50 to-pink-50">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-purple-50 to-pink-50 overflow-hidden">
               <CardHeader className="pb-6">
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Target className="w-8 h-8 text-white" />
@@ -121,7 +170,7 @@ const Classes = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                    <span className="text-french-blue/80">Completely personalized</span>
+                    <span className="text-french-blue/80">Completely personalised</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
@@ -137,6 +186,26 @@ const Classes = () => {
                   </div>
                 </div>
               </CardContent>
+              
+              {/* Pricing Section */}
+              <div className="bg-white text-french-navy p-6 mt-6 border-t border-gray-200">
+                <div className="text-center">
+                  <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">Per session:</span>
+                      <span className="font-bold text-lg text-french-navy">£45</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">5-session package:</span>
+                      <span className="font-bold text-lg text-french-navy">£200</span>
+                    </div>
+                    <div className="text-sm text-french-blue/60 mt-3">
+                      * All materials included
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
           </div>
 
@@ -166,70 +235,55 @@ const Classes = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Locations List */}
             <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-heading font-bold text-lg text-french-navy mb-2">Dulwich Village</h4>
-                    <p className="text-french-blue/80 mb-2">Dulwich Library Community Room</p>
-                    <p className="text-sm text-gray-600">SE21 7BQ • 5 min walk from East Dulwich station</p>
-                    <p className="text-sm text-blue-600 font-medium mt-2">Tuesdays 7:00-8:30 PM</p>
+                    <h4 className="font-heading font-bold text-lg text-french-navy mb-2">East Dulwich</h4>
+                    <p className="text-french-blue/80 mb-2">Grove Vale Library</p>
+                    <p className="text-sm text-gray-600">18-22 Grove Vale, East Dulwich, Southwark, Surrey, SE22 8EF</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-heading font-bold text-lg text-french-navy mb-2">Forest Hill</h4>
-                    <p className="text-french-blue/80 mb-2">Forest Hill Community Centre</p>
-                    <p className="text-sm text-gray-600">SE23 3HX • 3 min walk from Forest Hill station</p>
-                    <p className="text-sm text-emerald-600 font-medium mt-2">Thursdays 7:00-8:30 PM</p>
+                    <p className="text-french-blue/80 mb-2">Forest Hill Library</p>
+                    <p className="text-sm text-gray-600">Dartmouth Rd, London SE23 3HZ</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-blue-100">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-heading font-bold text-lg text-french-navy mb-2">Crystal Palace</h4>
-                    <p className="text-french-blue/80 mb-2">Crystal Palace Community Centre</p>
-                    <p className="text-sm text-gray-600">SE19 2BA • 5 min walk from Crystal Palace station</p>
-                    <p className="text-sm text-purple-600 font-medium mt-2">Saturdays 10:00-11:30 AM</p>
+                    <h4 className="font-heading font-bold text-lg text-french-navy mb-2">Sydenham</h4>
+                    <p className="text-french-blue/80 mb-2">Sydenham Library</p>
+                    <p className="text-sm text-gray-600">210 Sydenham Rd, London SE26 5SE</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Interactive Map */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 shadow-lg border border-gray-200">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="font-heading font-bold text-lg text-gray-900 mb-2">Interactive Map</h4>
-                  <p className="text-gray-600 mb-4">View all our group class locations across South East London</p>
-                  <div className="bg-white rounded-lg p-4 border border-gray-200">
-                    <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
-                      <div className="text-center">
-                        <MapPin className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                        <p className="text-sm text-gray-500">Map integration coming soon</p>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-3">
-                    Exact addresses provided upon booking
-                  </p>
-                </div>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
+                {/* Real Map Component */}
+                <Map locations={mapLocations} />
+                
+                <p className="text-xs text-gray-500 mt-4 text-center">
+                  Hover over locations to see images • Exact addresses provided upon booking
+                </p>
               </div>
             </div>
           </div>
@@ -247,13 +301,13 @@ const Classes = () => {
               Exam Preparation
             </h2>
             <p className="text-xl text-french-blue/80 max-w-3xl mx-auto">
-              Expert preparation for GCSE and A-Level French exams with proven techniques and personalized support.
+              We focus on exam-smart techniques for GCSE and A-Level French, while building confidence through personalised support.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             {/* GCSE French */}
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-emerald-50 to-teal-50">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-emerald-50 to-teal-50 overflow-hidden">
               <CardHeader className="pb-6">
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <BookOpen className="w-8 h-8 text-white" />
@@ -285,10 +339,30 @@ const Classes = () => {
                   </div>
                 </div>
               </CardContent>
+              
+              {/* Pricing Section */}
+              <div className="bg-white text-french-navy p-6 mt-6 border-t border-gray-200">
+                <div className="text-center">
+                  <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">Per session:</span>
+                      <span className="font-bold text-lg text-french-navy">£50</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">10-session package:</span>
+                      <span className="font-bold text-lg text-french-navy">£450</span>
+                    </div>
+                    <div className="text-sm text-french-blue/60 mt-3">
+                      * All materials included
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
 
             {/* A-Level French */}
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-orange-50 to-red-50">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-orange-50 to-red-50 overflow-hidden">
               <CardHeader className="pb-6">
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Award className="w-8 h-8 text-white" />
@@ -320,6 +394,26 @@ const Classes = () => {
                   </div>
                 </div>
               </CardContent>
+              
+              {/* Pricing Section */}
+              <div className="bg-white text-french-navy p-6 mt-6 border-t border-gray-200">
+                <div className="text-center">
+                  <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">Per session:</span>
+                      <span className="font-bold text-lg text-french-navy">£60</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-french-blue/80">10-session package:</span>
+                      <span className="font-bold text-lg text-french-navy">£550</span>
+                    </div>
+                    <div className="text-sm text-french-blue/60 mt-3">
+                      * All materials included
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
           </div>
 

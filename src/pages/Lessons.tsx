@@ -88,7 +88,7 @@ const Lessons = () => {
                   Small Groups
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Maximum 8 students for personalized attention and confident practice
+                  Maximum 8 students for personalised attention and confident practice
                 </p>
               </CardContent>
             </Card>
