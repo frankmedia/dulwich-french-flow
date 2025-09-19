@@ -300,32 +300,33 @@ const Home = () => {
                   Passionate About Bringing French to Life
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  With over 10 years of experience teaching French to adults, I understand the unique 
-                  challenges of returning to a language you once knew. My approach combines structured 
-                  learning with the joy of rediscovering French culture and conversation.
+                  Hi, I'm Barbara! Mum of three, South Londoner, native French speaker, fully qualified teacher… and (bien sûr) Camembert lover! I've worked with learners of all ages and levels, so I understand both the joys and the frustrations of learning a language, as well as the pressure of preparing for exams like GCSEs and A-levels.
                 </p>
+                <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+                  In my lessons, you'll find the right mix of structure and culture: building strong grammar foundations while also exploring songs, films, traditions, and everyday life, so that French feels relevant, enjoyable, and part of the real world!
+                </p>
+                
+                <ul className="space-y-4 mt-6">
+                  <li className="flex items-center group">
+                    <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-emerald-500/25 group-hover:scale-110 transition-all duration-300">
+                      <CheckCircle className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-foreground group-hover:text-emerald-600 transition-colors duration-300">Fully qualified French teacher (QTS and PGCE)</span>
+                  </li>
+                  <li className="flex items-center group">
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-blue-500/25 group-hover:scale-110 transition-all duration-300">
+                      <CheckCircle className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-foreground group-hover:text-blue-600 transition-colors duration-300">DAEFLE Certified with the Alliance française de Paris</span>
+                  </li>
+                  <li className="flex items-center group">
+                    <div className="w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-rose-500/25 group-hover:scale-110 transition-all duration-300">
+                      <CheckCircle className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-foreground group-hover:text-rose-600 transition-colors duration-300">BA in Business and Languages (English and Spanish)</span>
+                  </li>
+                </ul>
               </div>
-              
-              <ul className="space-y-4">
-                <li className="flex items-center group">
-                  <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-emerald-500/25 group-hover:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-foreground group-hover:text-emerald-600 transition-colors duration-300">MA in French Literature & Linguistics</span>
-                </li>
-                <li className="flex items-center group">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-blue-500/25 group-hover:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-foreground group-hover:text-blue-600 transition-colors duration-300">Certified DELF/DALF examiner</span>
-                </li>
-                <li className="flex items-center group">
-                  <div className="w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-md group-hover:shadow-rose-500/25 group-hover:scale-110 transition-all duration-300">
-                    <CheckCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-foreground group-hover:text-rose-600 transition-colors duration-300">Specialising in adult conversation classes</span>
-                </li>
-              </ul>
               
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                 <Link to="/about">
@@ -340,7 +341,7 @@ const Home = () => {
                 <img 
                   src={teacherPortrait} 
                   alt="French teacher in classroom"
-                  className="w-full h-[500px] object-cover object-top"
+                  className="w-full h-[510px] object-cover object-top"
                 />
               </div>
             </div>
