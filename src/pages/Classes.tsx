@@ -4,6 +4,9 @@ import { Users, Calendar, Clock, BookOpen, Target, Award, MessageCircle, ArrowRi
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Map from "@/components/Map";
+import eastDulwichLibrary from "@/assets/east-dulwich-library.jpg";
+import forestHillLibrary from "@/assets/forest-hill-library.jpg";
+import sydenhamLibrary from "@/assets/sydenham-library.jpg";
 
 const Classes = () => {
   const location = useLocation();
@@ -17,7 +20,7 @@ const Classes = () => {
       address: 'Grove Vale Library, 18-22 Grove Vale, East Dulwich, Southwark, Surrey, SE22 8EF',
       coordinates: [51.4614, -0.0806] as [number, number],
       color: 'blue',
-      image: '/src/assets/east-dulwich-library.jpg'
+      image: eastDulwichLibrary
     },
     {
       id: 'forest-hill',
@@ -25,7 +28,7 @@ const Classes = () => {
       address: 'Forest Hill Library, Dartmouth Rd, London SE23 3HZ',
       coordinates: [51.4394, -0.0542] as [number, number],
       color: 'emerald',
-      image: '/src/assets/forest-hill-library.jpg'
+      image: forestHillLibrary
     },
     {
       id: 'sydenham',
@@ -33,7 +36,7 @@ const Classes = () => {
       address: 'Sydenham Library, 210 Sydenham Rd, London SE26 5SE',
       coordinates: [51.4269, -0.0542] as [number, number],
       color: 'purple',
-      image: '/src/assets/sydenham-library.jpg'
+      image: sydenhamLibrary
     }
   ];
 
@@ -303,9 +306,6 @@ const Classes = () => {
                 {/* Real Map Component */}
                 <Map locations={mapLocations} selectedLocation={selectedLocation} />
                 
-                <p className="text-xs text-gray-500 mt-4 text-center">
-                  Hover over locations to see images • Exact addresses provided upon booking
-                </p>
               </div>
             </div>
           </div>
