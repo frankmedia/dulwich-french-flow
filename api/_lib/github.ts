@@ -30,7 +30,7 @@ function getRepoParams() {
 
 export async function getRepoFile(path: string): Promise<GitHubFile> {
   const { owner, repo, branch } = getRepoParams();
-  const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}?ref=${encodeURIComponent(branch)}`;
+  const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`;
   const res = await fetch(url, { headers: getAuthHeaders() });
   if (!res.ok) {
     throw new Error(`GitHub get failed: ${res.status}`);
@@ -49,7 +49,7 @@ export async function putRepoFile(path: string, content: string, message: string
   } catch (_err) {
     sha = undefined;
   }
-  const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
+  const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/contents/${path}`;
   const body = {
     message,
     content: Buffer.from(content, 'utf8').toString('base64'),
@@ -66,7 +66,7 @@ export async function putRepoFile(path: string, content: string, message: string
 export async function deleteRepoFile(path: string, message: string): Promise<void> {
   const { owner, repo, branch } = getRepoParams();
   const current = await getRepoFile(path);
-  const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
+  const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/contents/${path}`;
   const body = { message, sha: current.sha, branch };
   const res = await fetch(url, { method: 'DELETE', headers: getAuthHeaders(), body: JSON.stringify(body) });
   if (!res.ok) {
