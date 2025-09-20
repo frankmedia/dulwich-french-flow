@@ -1,6 +1,5 @@
 import { getJsonFile } from '../_lib/github';
 
-export const config = { runtime: 'nodejs' };
 
 export default async function handler(_req: any, res: any) {
   const envReport = {
