@@ -1,4 +1,3 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 export const config = { runtime: 'nodejs' };
 import { getJsonFile, putJsonFile } from '../_lib/github';
 
@@ -6,7 +5,7 @@ interface PostMeta { slug: string; title: string; date: string; image?: string |
 interface Post extends PostMeta { content: string }
 interface IndexFile { posts: PostMeta[] }
 
-function checkBasicAuth(req: VercelRequest): boolean {
+function checkBasicAuth(req: any): boolean {
   const header = req.headers['authorization'] || '';
   if (typeof header !== 'string' || !header.startsWith('Basic ')) return false;
   const decoded = Buffer.from(header.slice(6), 'base64').toString();
@@ -16,7 +15,7 @@ function checkBasicAuth(req: VercelRequest): boolean {
   return user === expectedUser && pass === expectedPass;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   try {
     if (req.method === 'GET') {
       const { data } = await getJsonFile<IndexFile>('content/blog/index.json');

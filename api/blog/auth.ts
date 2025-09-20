@@ -1,6 +1,4 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-function checkBasicAuth(req: VercelRequest): boolean {
+function checkBasicAuth(req: any): boolean {
   const header = req.headers['authorization'] || '';
   if (typeof header !== 'string' || !header.startsWith('Basic ')) return false;
   const decoded = Buffer.from(header.slice(6), 'base64').toString();
@@ -10,7 +8,7 @@ function checkBasicAuth(req: VercelRequest): boolean {
   return user === expectedUser && pass === expectedPass;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).json({ error: 'Method Not Allowed' });

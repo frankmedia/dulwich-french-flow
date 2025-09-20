@@ -1,9 +1,8 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { getJsonFile } from '../_lib/github';
 
 export const config = { runtime: 'nodejs' };
 
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
+export default async function handler(_req: any, res: any) {
   const envReport = {
     BASIC_USER: Boolean(process.env.BASIC_USER),
     BASIC_PASS: Boolean(process.env.BASIC_PASS),

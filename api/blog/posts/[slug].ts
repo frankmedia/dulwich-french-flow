@@ -1,11 +1,10 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 export const config = { runtime: 'nodejs' };
 import { deleteRepoFile, getJsonFile, putJsonFile } from '../../_lib/github';
 
 interface Post { slug: string; title: string; content: string; date: string; image?: string | null }
 interface IndexFile { posts: Array<{ slug: string; title: string; date: string; image?: string | null }>; }
 
-function checkBasicAuth(req: VercelRequest): boolean {
+function checkBasicAuth(req: any): boolean {
   const header = req.headers['authorization'] || '';
   if (typeof header !== 'string' || !header.startsWith('Basic ')) return false;
   const decoded = Buffer.from(header.slice(6), 'base64').toString();
@@ -15,7 +14,7 @@ function checkBasicAuth(req: VercelRequest): boolean {
   return user === expectedUser && pass === expectedPass;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   try {
     const slug = (req.query.slug || '') as string;
     if (!slug) return res.status(400).json({ error: 'Missing slug' });
