@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+export const config = { runtime: 'nodejs' };
 import { deleteRepoFile, getJsonFile, putJsonFile } from '../../_lib/github';
 
 interface Post { slug: string; title: string; content: string; date: string; image?: string | null }
