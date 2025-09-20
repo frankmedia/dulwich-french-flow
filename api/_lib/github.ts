@@ -16,7 +16,8 @@ function getAuthHeaders() {
   return {
     Authorization: `token ${token}`,
     'Content-Type': 'application/json',
-    'Accept': 'application/vnd.github+json'
+    'Accept': 'application/vnd.github+json',
+    'User-Agent': 'french-flow-cms'
   } as Record<string, string>;
 }
 
@@ -33,7 +34,8 @@ export async function getRepoFile(path: string): Promise<GitHubFile> {
   const url = `${GITHUB_API_BASE}/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`;
   const res = await fetch(url, { headers: getAuthHeaders() });
   if (!res.ok) {
-    throw new Error(`GitHub get failed: ${res.status}`);
+    const text = await res.text().catch(() => '');
+    throw new Error(`GitHub get failed: ${res.status} ${text}`);
   }
   const json: any = await res.json();
   const content = Buffer.from(json.content || '', 'base64').toString('utf8');
@@ -58,7 +60,7 @@ export async function putRepoFile(path: string, content: string, message: string
   };
   const res = await fetch(url, { method: 'PUT', headers: getAuthHeaders(), body: JSON.stringify(body) });
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.text().catch(() => '');
     throw new Error(`GitHub put failed: ${res.status} ${text}`);
   }
 }
@@ -70,7 +72,7 @@ export async function deleteRepoFile(path: string, message: string): Promise<voi
   const body = { message, sha: current.sha, branch };
   const res = await fetch(url, { method: 'DELETE', headers: getAuthHeaders(), body: JSON.stringify(body) });
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.text().catch(() => '');
     throw new Error(`GitHub delete failed: ${res.status} ${text}`);
   }
 }
