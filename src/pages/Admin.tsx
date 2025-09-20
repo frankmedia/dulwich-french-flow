@@ -24,6 +24,7 @@ const Admin: React.FC = () => {
   const navigate = useNavigate();
   const { slug } = useParams<{ slug: string }>();
   const location = window.location.pathname;
+  const showDebug = import.meta.env.DEV || import.meta.env.VITE_SHOW_ADMIN_DEBUG === 'true';
 
   // Check authentication status
   const checkAuth = () => {
@@ -388,66 +389,70 @@ const Admin: React.FC = () => {
                 <p className="text-french-blue/70">Manage your French Flow blog posts</p>
               </div>
               <div className="flex gap-2">
-                <button
-                  onClick={async () => {
-                    const valid = await testAuth();
-                    if (valid) {
-                      setSuccess('Authentication is valid!');
-                      setTimeout(() => setSuccess(''), 3000);
-                    } else {
-                      setError('Authentication failed. Please log in again.');
-                      setTimeout(() => forceReauth(), 2000);
-                    }
-                  }}
-                  className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-                >
-                  Test Auth
-                </button>
-                <button
-                  onClick={async () => {
-                    try {
-                      const auth = localStorage.getItem('adminAuth');
-                      console.log('Test save - auth token:', auth);
-                      
-                  const payload = {
-                    slug: 'test-save-debug',
-                    title: 'Test Save Debug',
-                    content: 'Test content for debugging',
-                    date: new Date().toISOString()
-                  };
+                {showDebug && (
+                  <>
+                    <button
+                      onClick={async () => {
+                        const valid = await testAuth();
+                        if (valid) {
+                          setSuccess('Authentication is valid!');
+                          setTimeout(() => setSuccess(''), 3000);
+                        } else {
+                          setError('Authentication failed. Please log in again.');
+                          setTimeout(() => forceReauth(), 2000);
+                        }
+                      }}
+                      className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                    >
+                      Test Auth
+                    </button>
+                    <button
+                      onClick={async () => {
+                        try {
+                          const auth = localStorage.getItem('adminAuth');
+                          console.log('Test save - auth token:', auth);
+                          
+                          const payload = {
+                            slug: 'test-save-debug',
+                            title: 'Test Save Debug',
+                            content: 'Test content for debugging',
+                            date: new Date().toISOString()
+                          };
 
-                      const response = await fetch('/api/blog/posts', {
-                        method: 'POST',
-                        headers: {
-                          'Authorization': `Basic ${auth}`,
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(payload)
-                      });
+                          const response = await fetch('/api/blog/posts', {
+                            method: 'POST',
+                            headers: {
+                              'Authorization': `Basic ${auth}`,
+                              'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                          });
 
-                      console.log('Test save response:', response.status, response.statusText);
-                      if (response.ok) {
-                        setSuccess('Test save successful!');
-                        setTimeout(() => setSuccess(''), 3000);
-                      } else {
-                        const errorText = await response.text();
-                        setError(`Test save failed: ${response.status} ${response.statusText} - ${errorText}`);
-                      }
-                    } catch (err) {
-                      console.error('Test save error:', err);
-                      setError('Test save failed: ' + err);
-                    }
-                  }}
-                  className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
-                >
-                  Test Save
-                </button>
-                <button
-                  onClick={fixAuthToken}
-                  className="flex items-center gap-2 bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors"
-                >
-                  Fix Auth Token
-                </button>
+                          console.log('Test save response:', response.status, response.statusText);
+                          if (response.ok) {
+                            setSuccess('Test save successful!');
+                            setTimeout(() => setSuccess(''), 3000);
+                          } else {
+                            const errorText = await response.text();
+                            setError(`Test save failed: ${response.status} ${response.statusText} - ${errorText}`);
+                          }
+                        } catch (err) {
+                          console.error('Test save error:', err);
+                          setError('Test save failed: ' + err);
+                        }
+                      }}
+                      className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+                    >
+                      Test Save
+                    </button>
+                    <button
+                      onClick={fixAuthToken}
+                      className="flex items-center gap-2 bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors"
+                    >
+                      Fix Auth Token
+                    </button>
+                  </>
+                )}
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
