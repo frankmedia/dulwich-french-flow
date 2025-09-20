@@ -128,10 +128,11 @@ const Admin: React.FC = () => {
         localStorage.setItem('adminAuth', token);
         fetchPosts();
       } else {
-        setError('Invalid credentials');
+        const text = await response.text();
+        setError(`Invalid credentials (status ${response.status}): ${text}`);
       }
     } catch (err) {
-      setError('Login failed');
+      setError(`Login failed: ${err}`);
     } finally {
       setLoading(false);
     }

@@ -40,6 +40,11 @@ app.use(express.json({ limit: '2mb' }));
 // Health
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
 
+// Auth check (for local dev parity with serverless)
+app.get('/api/blog/auth', basicAuth, (_req, res) => {
+  res.json({ ok: true });
+});
+
 // List posts (metadata only)
 app.get('/api/blog/posts', (_req, res) => {
   const index = readIndex();

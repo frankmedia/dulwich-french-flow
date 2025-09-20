@@ -74,6 +74,10 @@ app.use('/uploads', express.static(UPLOADS_DIR));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
 
+app.get('/api/blog/auth', basicAuth, (_req, res) => {
+  res.json({ ok: true });
+});
+
 app.get('/api/blog/posts', (_req, res) => {
   const index = readIndex();
   res.json(index.posts.sort((a, b) => (b.date || '').localeCompare(a.date || '')));
