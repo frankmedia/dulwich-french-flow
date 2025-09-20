@@ -14,7 +14,7 @@ const GITHUB_API_BASE = 'https://api.github.com';
 function getAuthHeaders() {
   const token = getEnv('GITHUB_TOKEN');
   return {
-    Authorization: `token ${token}`,
+    Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json',
     'Accept': 'application/vnd.github+json',
     'User-Agent': 'french-flow-cms'
