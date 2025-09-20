@@ -19,12 +19,22 @@ const BlogPost = () => {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     if (slug) {
       fetchBlogPost(slug);
     }
   }, [slug]);
+
+  useEffect(() => {
+    try {
+      const auth = localStorage.getItem('adminAuth');
+      setIsAdmin(!!auth);
+    } catch (_) {
+      setIsAdmin(false);
+    }
+  }, []);
 
   const fetchBlogPost = async (postSlug: string) => {
     try {
@@ -113,13 +123,18 @@ const BlogPost = () => {
       />
       <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Back Navigation */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 flex items-center gap-3">
         <Button variant="ghost" asChild>
           <Link to="/blog">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Blog
           </Link>
         </Button>
+        {isAdmin && (
+          <Button variant="outline" asChild>
+            <Link to="/admin">Back to Admin</Link>
+          </Button>
+        )}
       </div>
 
       {/* Blog Post Content */}

@@ -9,6 +9,7 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isClassesDropdownOpen, setIsClassesDropdownOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -18,6 +19,15 @@ const Navigation = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    try {
+      const auth = localStorage.getItem('adminAuth');
+      setIsAdmin(!!auth);
+    } catch (_) {
+      setIsAdmin(false);
+    }
   }, []);
 
   const navItems = [
@@ -106,6 +116,17 @@ const Navigation = () => {
                 )}
               </div>
             ))}
+            {isAdmin && (
+              <Link
+                to="/admin"
+                className={cn(
+                  "font-medium transition-colors hover:text-primary text-sm uppercase tracking-wider",
+                  location.pathname.startsWith('/admin') ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                Admin
+              </Link>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -171,6 +192,22 @@ const Navigation = () => {
                         )}
                       </div>
                     ))}
+                    {isAdmin && (
+                      <div>
+                        <Link
+                          to="/admin"
+                          onClick={() => setIsMenuOpen(false)}
+                          className={cn(
+                            "block py-3 font-medium text-lg transition-colors uppercase tracking-wider",
+                            location.pathname.startsWith('/admin')
+                              ? "text-primary"
+                              : "text-muted-foreground hover:text-primary"
+                          )}
+                        >
+                          Admin
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
