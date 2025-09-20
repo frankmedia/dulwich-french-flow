@@ -160,13 +160,14 @@ const BlogPost = () => {
 
           {/* Featured Image directly under title */}
           {post.image && (
-            <div className="mb-12 flex justify-center">
-              <img 
-                src={post.image}
-                alt={post.title}
-                className="rounded-lg shadow-elegant"
-                style={{ maxWidth: 800, width: '100%', height: 'auto' }}
-              />
+            <div className="mb-12 mx-auto" style={{ maxWidth: 800 }}>
+              <div className="w-full h-[500px] max-h-[500px] overflow-hidden rounded-lg shadow-elegant">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
             </div>
           )}
 
