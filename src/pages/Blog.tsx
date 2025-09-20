@@ -77,7 +77,7 @@ const Blog = () => {
   };
 
   const getExcerpt = (content: string, maxLength: number = 150) => {
-    if (!content) return 'No content available';
+    if (!content) return '';
     if (content.length <= maxLength) return content;
     return content.substring(0, maxLength).trim() + '...';
   };
@@ -169,9 +169,12 @@ const Blog = () => {
                       />
                     </div>
                   )}
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    {getExcerpt(blogPosts[0].content || '', 200)}
-                  </p>
+                  {(() => {
+                    const excerpt = getExcerpt(blogPosts[0].content || '', 200);
+                    return excerpt ? (
+                      <p className="text-lg text-muted-foreground mb-6 leading-relaxed">{excerpt}</p>
+                    ) : null;
+                  })()}
                   <Button asChild>
                     <Link to={`/blog/${blogPosts[0].slug || 'untitled'}`}>
                       Read Full Article
@@ -240,9 +243,12 @@ const Blog = () => {
                         />
                       </div>
                     )}
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {getExcerpt(post.content || '')}
-                    </p>
+                    {(() => {
+                      const excerpt = getExcerpt(post.content || '');
+                      return excerpt ? (
+                        <p className="text-muted-foreground mb-4 leading-relaxed">{excerpt}</p>
+                      ) : null;
+                    })()}
                     <Button variant="ghost" size="sm" asChild>
                       <Link to={`/blog/${post.slug || 'untitled'}`}>
                         Read More
