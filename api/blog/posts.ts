@@ -1,4 +1,4 @@
-import { getJsonFile, putJsonFile } from '../_lib/github';
+import { getJsonFile, putJsonFile } from '../_lib/github.js';
 
 interface PostMeta { slug: string; title: string; date: string; image?: string | null }
 interface Post extends PostMeta { content: string }

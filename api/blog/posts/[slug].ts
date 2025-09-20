@@ -1,4 +1,4 @@
-import { deleteRepoFile, getJsonFile, putJsonFile } from '../../_lib/github';
+import { deleteRepoFile, getJsonFile, putJsonFile } from '../../_lib/github.js';
 
 interface Post { slug: string; title: string; content: string; date: string; image?: string | null }
 interface IndexFile { posts: Array<{ slug: string; title: string; date: string; image?: string | null }>; }

@@ -1,4 +1,4 @@
-import { getJsonFile } from '../_lib/github';
+import { getJsonFile } from '../_lib/github.js';
 
 
 export default async function handler(_req: any, res: any) {
