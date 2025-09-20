@@ -175,12 +175,14 @@ const Blog = () => {
                       <p className="text-lg text-muted-foreground mb-6 leading-relaxed">{excerpt}</p>
                     ) : null;
                   })()}
-                  <Button asChild>
-                    <Link to={`/blog/${blogPosts[0].slug || 'untitled'}`}>
-                      Read Full Article
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
+                  <div className="flex justify-end">
+                    <Button asChild>
+                      <Link to={`/blog/${blogPosts[0].slug || 'untitled'}`}>
+                        Read Full Article
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
