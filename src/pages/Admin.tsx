@@ -319,8 +319,31 @@ const Admin: React.FC = () => {
     
     const file = e.target.files?.[0];
     if (file) {
-      // Update the form data will be handled in handleSavePost
-      setEditingPost({ ...editingPost });
+      void (async () => {
+        try {
+          const auth = localStorage.getItem('adminAuth') || '';
+          const uploadRes = await fetch('/api/blog/upload', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Basic ${auth}`,
+              'Content-Type': file.type || 'application/octet-stream',
+              'x-filename': file.name
+            },
+            body: await file.arrayBuffer()
+          });
+          if (!uploadRes.ok) {
+            const text = await uploadRes.text();
+            setError(`Image upload failed: ${uploadRes.status} ${uploadRes.statusText} - ${text}`);
+            return;
+          }
+          const { url } = await uploadRes.json();
+          setEditingPost({ ...editingPost, image: url });
+          setSuccess('Image uploaded');
+          setTimeout(() => setSuccess(''), 2500);
+        } catch (err) {
+          setError('Image upload failed: ' + err);
+        }
+      })();
     }
   };
 
