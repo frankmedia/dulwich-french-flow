@@ -38,16 +38,34 @@ const Blog = () => {
       });
       
       if (response.ok) {
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+          throw new Error('Non-JSON response from API');
+        }
         const posts = await response.json();
-        setBlogPosts(posts);
+        // API returns an array; static file returns { posts: [...] }
+        setBlogPosts(Array.isArray(posts) ? posts : (posts?.posts || []));
       } else {
-        setError(`Failed to load blog posts: ${response.status}`);
+        // Fall back to static content file if API not available
+        await fetchFromStatic();
       }
     } catch (err) {
-      setError(`Failed to load blog posts: ${err instanceof Error ? err.message : 'Unknown error'}`);
+      // Likely HTML from SPA fallback or network error; try static file
+      try {
+        await fetchFromStatic();
+      } catch (fallbackErr) {
+        setError(`Failed to load blog posts: ${err instanceof Error ? err.message : 'Unknown error'}`);
+      }
     } finally {
       setLoading(false);
     }
+  };
+
+  const fetchFromStatic = async () => {
+    const res = await fetch('/content/blog/index.json', { headers: { 'Content-Type': 'application/json' } });
+    if (!res.ok) throw new Error(`Static index not found: ${res.status}`);
+    const data = await res.json();
+    setBlogPosts(Array.isArray(data) ? data : (data?.posts || []));
   };
 
   const formatDate = (dateString: string) => {

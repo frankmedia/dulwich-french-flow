@@ -220,11 +220,12 @@ const Admin: React.FC = () => {
         return;
       }
 
-      const formData = new FormData();
-      formData.append('slug', editingPost.slug);
-      formData.append('title', editingPost.title);
-      formData.append('content', editingPost.content);
-      formData.append('date', editingPost.date);
+      const payload = {
+        slug: editingPost.slug,
+        title: editingPost.title,
+        content: editingPost.content,
+        date: editingPost.date
+      };
 
       const auth = localStorage.getItem('adminAuth');
       console.log('Save auth token:', auth); // Debug log
@@ -243,9 +244,10 @@ const Admin: React.FC = () => {
       const response = await fetch('/api/blog/posts', {
         method: 'POST',
         headers: {
-          'Authorization': `Basic ${auth}`
+          'Authorization': `Basic ${auth}`,
+          'Content-Type': 'application/json'
         },
-        body: formData
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
@@ -406,18 +408,20 @@ const Admin: React.FC = () => {
                       const auth = localStorage.getItem('adminAuth');
                       console.log('Test save - auth token:', auth);
                       
-                      const formData = new FormData();
-                      formData.append('slug', 'test-save-debug');
-                      formData.append('title', 'Test Save Debug');
-                      formData.append('content', 'Test content for debugging');
-                      formData.append('date', new Date().toISOString());
+                  const payload = {
+                    slug: 'test-save-debug',
+                    title: 'Test Save Debug',
+                    content: 'Test content for debugging',
+                    date: new Date().toISOString()
+                  };
 
                       const response = await fetch('/api/blog/posts', {
                         method: 'POST',
                         headers: {
-                          'Authorization': `Basic ${auth}`
+                          'Authorization': `Basic ${auth}`,
+                          'Content-Type': 'application/json'
                         },
-                        body: formData
+                        body: JSON.stringify(payload)
                       });
 
                       console.log('Test save response:', response.status, response.statusText);

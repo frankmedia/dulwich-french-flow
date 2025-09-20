@@ -30,16 +30,31 @@ const BlogPost = () => {
     try {
       const response = await fetch(`/api/blog/posts/${postSlug}`);
       if (response.ok) {
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+          throw new Error('Non-JSON response from API');
+        }
         const postData = await response.json();
         setPost(postData);
       } else {
-        setError('Blog post not found');
+        await fetchFromStatic(postSlug);
       }
     } catch (err) {
-      setError('Failed to load blog post');
+      try {
+        await fetchFromStatic(postSlug);
+      } catch (_fallbackErr) {
+        setError('Failed to load blog post');
+      }
     } finally {
       setLoading(false);
     }
+  };
+
+  const fetchFromStatic = async (postSlug: string) => {
+    const res = await fetch(`/content/blog/posts/${postSlug}.json`, { headers: { 'Content-Type': 'application/json' } });
+    if (!res.ok) throw new Error('Static post not found');
+    const data: BlogPost = await res.json();
+    setPost(data);
   };
 
   const formatDate = (dateString: string) => {
