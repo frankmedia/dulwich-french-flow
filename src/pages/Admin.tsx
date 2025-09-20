@@ -45,7 +45,7 @@ const Admin: React.FC = () => {
     if (!auth) return false;
     
     try {
-      const response = await fetch('/api/blog/posts', {
+      const response = await fetch('/api/blog/auth', {
         headers: {
           'Authorization': `Basic ${auth}`
         }
@@ -113,7 +113,7 @@ const Admin: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('/api/blog/posts', {
+      const response = await fetch('/api/blog/auth', {
         headers: {
           'Authorization': `Basic ${btoa(`${username}:${password}`)}`
         }
