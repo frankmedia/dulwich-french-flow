@@ -226,7 +226,8 @@ const Admin: React.FC = () => {
         slug: editingPost.slug,
         title: editingPost.title,
         content: editingPost.content,
-        date: editingPost.date
+        date: editingPost.date,
+        image: editingPost.image || null
       };
 
       const auth = localStorage.getItem('adminAuth');
