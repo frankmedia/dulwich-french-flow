@@ -120,6 +120,32 @@ const BlogPost = () => {
         description={post?.content ? post.content.substring(0, 160) + "..." : "Read this French learning article from French Flow, your local French teacher in South East London."}
         keywords="French learning, French language, French culture, French tips, French teacher, South East London, French lessons"
         url={`/blog/${slug}`}
+        type="article"
+        image={post?.image || "https://frenchflow.co.uk/og-image.svg"}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post?.title || "French Learning Article",
+          image: post?.image ? [post.image] : ["https://frenchflow.co.uk/og-image.svg"],
+          datePublished: post?.date || new Date().toISOString(),
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://frenchflow.co.uk/blog/${slug}`
+          },
+          author: {
+            "@type": "Person",
+            name: "Barbara"
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "French Flow",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://frenchflow.co.uk/french-flow-logo.png"
+            }
+          },
+          description: post?.content ? post.content.substring(0, 160) + "..." : ""
+        }}
       />
       <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Back Navigation */}
