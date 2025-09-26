@@ -1,6 +1,14 @@
+import SEO from "@/components/SEO";
+
 const Terms = () => {
   return (
     <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+      <SEO
+        title="Terms & Conditions"
+        description="Terms & Conditions for French Flow lessons and services in South East London."
+        keywords="French Flow terms, terms and conditions, Dulwich French lessons"
+        url="/terms"
+      />
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <h1 className="text-4xl font-heading font-bold mb-6">Terms & Conditions</h1>

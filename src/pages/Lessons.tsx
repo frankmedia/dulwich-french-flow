@@ -15,10 +15,17 @@ import {
   Target
 } from "lucide-react";
 import groupClasses from "@/assets/group-classes.png";
+import SEO from "@/components/SEO";
 
 const Lessons = () => {
   return (
     <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+      <SEO
+        title="6-Week French Confidence Course in Dulwich"
+        description="Structured 6-week French conversation blocks for adults in Dulwich. Small groups (max 8) to rebuild confidence."
+        keywords="Dulwich French course, 6-week French, adult French classes"
+        url="/lessons"
+      />
       {/* Hero Section */}
       <section className="py-20 gradient-subtle">
         <div className="container mx-auto px-4">

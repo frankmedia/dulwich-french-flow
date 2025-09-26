@@ -1,6 +1,14 @@
+import SEO from "@/components/SEO";
+
 const Privacy = () => {
   return (
     <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+      <SEO
+        title="Privacy Policy"
+        description="Privacy policy for French Flow: how we collect, use, and protect your personal data."
+        keywords="French Flow privacy policy, data protection, Dulwich French lessons privacy"
+        url="/privacy"
+      />
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <h1 className="text-4xl font-heading font-bold mb-6">Privacy Policy</h1>

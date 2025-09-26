@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from "@/components/SEO";
 import { useNavigate, useParams } from 'react-router-dom';
 import { Plus, Edit, Trash2, Eye, LogOut, Save, X } from 'lucide-react';
 
@@ -351,6 +352,12 @@ const Admin: React.FC = () => {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-french-cream to-french-ivory flex items-center justify-center p-4">
+        <SEO
+          title="Admin Login"
+          description="Admin login for French Flow blog management."
+          url="/admin"
+          robots="noindex, nofollow"
+        />
         <div className="bg-white rounded-lg shadow-elegant p-8 w-full max-w-md">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-heading text-french-navy mb-2">Admin Login</h1>

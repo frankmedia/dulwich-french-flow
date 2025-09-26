@@ -1,6 +1,14 @@
+import SEO from "@/components/SEO";
+
 const Cookies = () => {
   return (
     <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
+      <SEO
+        title="Cookies Policy"
+        description="Cookies policy for French Flow website. Learn how cookies are used and managed."
+        keywords="cookies policy, French Flow cookies, website cookies"
+        url="/cookies"
+      />
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <h1 className="text-4xl font-heading font-bold mb-6">Cookies Policy</h1>

@@ -8,6 +8,7 @@ interface SEOProps {
   url?: string;
   type?: string;
   structuredData?: any;
+  robots?: string;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -21,6 +22,7 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const fullTitle = title.includes("French Flow") ? title : `${title} | French Flow`;
   const fullUrl = url.startsWith("http") ? url : `https://frenchflow.co.uk${url}`;
+  const robotsDirectives = typeof robots === 'string' && robots.length > 0 ? robots : "index, follow";
 
   return (
     <Helmet>
@@ -29,7 +31,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="author" content="Barbara - French Flow" />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={robotsDirectives} />
       <link rel="canonical" href={fullUrl} />
 
       {/* Open Graph / Facebook */}
