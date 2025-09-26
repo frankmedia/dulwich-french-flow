@@ -25,6 +25,7 @@ import heroIllustration from "@/assets/hero-illustration.jpg";
 import frenchClass from "@/assets/french-class.jpg";
 import SEO from "@/components/SEO";
 import { businessStructuredData, testimonialStructuredData } from "@/lib/structuredData";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Home = () => {
   return (
@@ -359,30 +360,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Testimonials Carousel */}
       <section className="py-32 bg-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto">
             <div className="flex justify-center mb-8">
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
-                  className="w-6 h-6 text-yellow-400 fill-current hover:scale-125 transition-transform duration-300 hover:drop-shadow-lg" 
-                  style={{ 
-                    animationDelay: `${i * 0.1}s`,
-                    animation: 'pulse 2s ease-in-out infinite'
-                  }}
+                  className="w-6 h-6 text-yellow-400 fill-current" 
                 />
               ))}
             </div>
-            <blockquote className="text-2xl md:text-3xl font-heading italic mb-8 leading-relaxed text-foreground">
-              "After 20 years since my A-levels, I thought my French was lost forever. 
-              The 6-week course brought it all back and gave me the confidence to actually 
-              use it. I'm now planning my first trip to France in decades!"
-            </blockquote>
-            <cite className="text-lg text-muted-foreground">
-              - Sarah M., Dulwich Village
-            </cite>
+            <Carousel className="relative">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="text-center px-4">
+                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
+                      “Thank you so much for making the French lessons such an interesting and innovative experience for Isla. She's clearly been having a really wonderful time.”
+                    </blockquote>
+                    <cite className="text-lg text-muted-foreground">— a Year 2 parent</cite>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="text-center px-4">
+                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
+                      “Feedback from an A-Level parent: Thank you so much for my daughter’s session today. She came home so positive and really enjoyed her time with you. And thank you for all your inspiration, she has a completely different attitude to French!”
+                    </blockquote>
+                    <cite className="text-lg text-muted-foreground">— An A-Level parent</cite>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="-left-4" />
+              <CarouselNext className="-right-4" />
+            </Carousel>
           </div>
         </div>
       </section>
