@@ -379,7 +379,7 @@ const Home = () => {
                     <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
                       “Thank you so much for making the French lessons such an interesting and innovative experience for Isla. She's clearly been having a really wonderful time.”
                     </blockquote>
-                    <cite className="text-lg text-muted-foreground">a Year 2 parent</cite>
+                    <cite className="text-lg text-muted-foreground">A Year 2 parent</cite>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
