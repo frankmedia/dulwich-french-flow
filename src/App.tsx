@@ -21,12 +21,15 @@ import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
 import Footer from "./components/Footer";
 import Admin from "./pages/Admin";
+import GTM from "./components/GTM";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <GTM />
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -52,6 +55,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <CookieBanner />
         <SpeedInsights />
       </BrowserRouter>
     </TooltipProvider>
