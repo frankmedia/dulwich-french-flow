@@ -7,7 +7,7 @@ export const businessStructuredData = {
   "description": "French language classes for adults and exam preparation in South East London. Small group and 1:1 lessons with native French speaker.",
   "url": "https://frenchflow.co.uk",
   "logo": "https://frenchflow.co.uk/french-flow-logo.png",
-  "image": "https://frenchflow.co.uk/og-image.jpg",
+  "image": "https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg",
   "telephone": "+44-7812-345-678",
   "email": "barbara@frenchflow.co.uk",
   "address": {

@@ -24,7 +24,7 @@ export default async function handler(req: any, res: any) {
     const url = `${site}/blog/${encodeURIComponent(slug)}`;
     const title = post?.title || "French Flow Article";
     const description = (post?.content || "").substring(0, 180).trim();
-    const image = post?.image || `${site}/og-image.svg`;
+    const image = post?.image || `https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg`;
 
     const html = `<!doctype html>
 <html lang="en">

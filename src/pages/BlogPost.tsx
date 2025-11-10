@@ -121,12 +121,12 @@ const BlogPost = () => {
         keywords="French learning, French language, French culture, French tips, French teacher, South East London, French lessons"
         url={`/blog/${slug}`}
         type="article"
-        image={post?.image || "https://frenchflow.co.uk/og-image.svg"}
+        image={post?.image || "https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg"}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           headline: post?.title || "French Learning Article",
-          image: post?.image ? [post.image] : ["https://frenchflow.co.uk/og-image.svg"],
+          image: post?.image ? [post.image] : ["https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg"],
           datePublished: post?.date || new Date().toISOString(),
           mainEntityOfPage: {
             "@type": "WebPage",
