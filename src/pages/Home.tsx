@@ -116,7 +116,7 @@ const Home = () => {
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Group Classes</h4>
-                        <p className="text-gray-600 text-sm">Join our warm and friendly small groups (max 8 students) for conversation practice and structured learning.</p>
+                        <p className="text-gray-600 text-sm">Join our warm and friendly small groups for conversation practice and structured learning.</p>
                       </div>
                     </div>
                     
@@ -256,7 +256,7 @@ const Home = () => {
                   
                   <div className="space-y-4 text-left flex-grow">
                     <p className="text-gray-700 leading-relaxed">
-                      Classes are small (max 8), ensuring every learner gets individual support.
+                      Classes are small, ensuring every learner gets individual support.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
                       Tailored marking and feedback, with clear, actionable next steps.

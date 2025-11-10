@@ -86,7 +86,7 @@ const Pricing = () => {
                       <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 shadow-md group-hover:shadow-blue-500/25 group-hover:scale-110 transition-all duration-300">
                         <CheckCircle className="w-3 h-3 text-white" />
                       </div>
-                      <span className="group-hover:text-blue-600 transition-colors duration-300">Small groups (max 8 students)</span>
+                      <span className="group-hover:text-blue-600 transition-colors duration-300">Small groups</span>
                     </div>
                     <div className="flex items-center group">
                       <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0 shadow-md group-hover:shadow-purple-500/25 group-hover:scale-110 transition-all duration-300">
@@ -276,7 +276,7 @@ const Pricing = () => {
                       <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                         <Users className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-white">Small groups (max 8 students)</span>
+                      <span className="text-white">Small groups</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">

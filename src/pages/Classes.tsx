@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Map from "@/components/Map";
 import eastDulwichLibrary from "@/assets/east-dulwich-library.jpg";
-import forestHillLibrary from "@/assets/forest-hill-library.jpg";
+import forestHillLibrary from "@/assets/polish-center.jpg";
 import sydenhamLibrary from "@/assets/sydenham-library.jpg";
 import SEO from "@/components/SEO";
 import { courseStructuredData } from "@/lib/structuredData";
@@ -27,7 +27,7 @@ const Classes = () => {
     {
       id: 'forest-hill',
       name: 'Forest Hill',
-      address: 'Forest Hill Library, Dartmouth Rd, London SE23 3HZ',
+      address: 'Lewisham Polish Centre, 8 Waldram Park Rd, London SE23 2PN',
       coordinates: [51.4394, -0.0542] as [number, number],
       color: 'emerald',
       image: forestHillLibrary
@@ -122,14 +122,14 @@ const Classes = () => {
                   Group Classes
                 </CardTitle>
                 <CardDescription className="text-french-blue/80 text-lg leading-relaxed text-center">
-                  Join our warm and friendly small groups (max 8 students) for conversation practice and structured learning in a supportive environment.
+                  Join our warm and friendly small groups for conversation practice and structured learning in a supportive environment.
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                    <span className="text-french-blue/80">Small groups (max 8 students)</span>
+                    <span className="text-french-blue/80">Small groups</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
@@ -137,7 +137,7 @@ const Classes = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                    <span className="text-french-blue/80">6-week structured blocks</span>
+                    <span className="text-french-blue/80">8-week structured blocks</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
@@ -147,17 +147,13 @@ const Classes = () => {
               </CardContent>
               
               {/* Pricing Section */}
-              <div className="bg-white text-french-navy p-6 mt-6 border-t border-gray-200">
+              <div className="bg-white text-french-navy p-8 mt-6 border-t border-gray-200">
                 <div className="text-center">
                   <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-french-blue/80">6-week block:</span>
-                      <span className="font-bold text-lg text-french-navy">£120</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-french-blue/80">Per session:</span>
-                      <span className="font-bold text-lg text-french-navy">£20</span>
+                      <span className="text-french-blue/80">10-week block:</span>
+                      <span className="font-bold text-lg text-french-navy">£180</span>
                     </div>
                     <div className="text-sm text-french-blue/60 mt-3">
                       * All materials included
@@ -202,7 +198,7 @@ const Classes = () => {
               </CardContent>
               
               {/* Pricing Section */}
-              <div className="bg-white text-french-navy p-6 mt-6 border-t border-gray-200">
+              <div className="bg-white text-french-navy p-8 mt-6 border-t border-gray-200">
                 <div className="text-center">
                   <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
                   <div className="space-y-2">
@@ -283,8 +279,8 @@ const Classes = () => {
                   </div>
                   <div>
                     <h4 className="font-heading font-bold text-lg text-french-navy mb-2">Forest Hill</h4>
-                    <p className="text-french-blue/80 mb-2">Forest Hill Library</p>
-                    <p className="text-sm text-gray-600">Dartmouth Rd, London SE23 3HZ</p>
+                    <p className="text-french-blue/80 mb-2">Lewisham Polish Centre</p>
+                    <p className="text-sm text-gray-600">8 Waldram Park Rd, London SE23 2PN</p>
                   </div>
                 </div>
               </div>

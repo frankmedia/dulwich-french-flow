@@ -22,7 +22,7 @@ const Lessons = () => {
     <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       <SEO
         title="6-Week French Confidence Course in Dulwich"
-        description="Structured 6-week French conversation blocks for adults in Dulwich. Small groups (max 8) to rebuild confidence."
+        description="Structured 6-week French conversation blocks for adults in Dulwich. Small groups to rebuild confidence."
         keywords="Dulwich French course, 6-week French, adult French classes"
         url="/lessons"
       />
@@ -43,7 +43,7 @@ const Lessons = () => {
               
               <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 leading-relaxed">
                 Structured 6-week French conversation blocks designed for adults who want to rebuild their confidence. 
-                Small groups of maximum 8 students in Dulwich, South East London.
+                Small group classes in Dulwich, South East London.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -95,7 +95,7 @@ const Lessons = () => {
                   Small Groups
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Maximum 8 students for personalised attention and confident practice
+                  Small group sizes for personalised attention and confident practice
                 </p>
               </CardContent>
             </Card>

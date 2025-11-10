@@ -157,7 +157,8 @@ This message was sent from the French Flow website contact form.`
                 Start Your French Journey Today
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Ready to discover your French confidence? Start with a <span className="font-semibold">free 30-minute assessment</span>
+                Ready to discover your French confidence? Start with a free{' '}
+                <span className="font-semibold text-french-blue">30-minute assessment</span>{' '}
                 to establish your current level and discuss your goals.
               </p>
             </div>
@@ -363,7 +364,7 @@ This message was sent from the French Flow website contact form.`
                             </div>
                             <div>
                               <div className="font-semibold">Group Classes</div>
-                              <div className="text-sm text-gray-600">Small groups (max 8 students)</div>
+                              <div className="text-sm text-gray-600">Small groups</div>
                             </div>
                           </div>
                         </button>
@@ -493,7 +494,7 @@ This message was sent from the French Flow website contact form.`
                             </div>
                             <div>
                               <div className="font-semibold">Forest Hill</div>
-                              <div className="text-sm text-gray-600">Forest Hill Library, SE23 3HZ</div>
+                              <div className="text-sm text-gray-600">Lewisham Polish Centre, SE23 2PN</div>
                             </div>
                           </div>
                         </button>
@@ -655,7 +656,7 @@ This message was sent from the French Flow website contact form.`
                         <Calendar className="w-4 h-4 text-white" />
                       </div>
                       <span className="font-heading font-semibold text-lg text-foreground">
-                        What if I can't commit to all 6 weeks?
+                        What if I can't commit to all 10 weeks?
                       </span>
                     </div>
                   </AccordionTrigger>
@@ -697,7 +698,7 @@ This message was sent from the French Flow website contact form.`
                         <ArrowRight className="w-4 h-4 text-white" />
                       </div>
                       <span className="font-heading font-semibold text-lg text-foreground">
-                        What happens after the 6-week block?
+                        What happens after the 10-week block?
                       </span>
                     </div>
                   </AccordionTrigger>

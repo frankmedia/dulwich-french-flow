@@ -46,7 +46,7 @@ const OnlineClasses = () => {
                     Adult Classes
                   </CardTitle>
                   <CardDescription className="text-french-blue/80 text-lg leading-relaxed">
-                    <strong>Group Classes:</strong> Join our warm and friendly small groups (max 8 students) for conversation practice and structured learning in a supportive environment.<br/><br/>
+                    <strong>Group Classes:</strong> Join our warm and friendly small groups for conversation practice and structured learning in a supportive environment.<br/><br/>
                     <strong>1:1 Sessions:</strong> Personalized lessons tailored to your specific goals, schedule, and learning pace. Perfect for focused improvement or specific needs.
                   </CardDescription>
                 </CardHeader>
@@ -335,7 +335,7 @@ const OnlineClasses = () => {
                 </div>
                 <CardTitle className="text-xl text-french-navy">Small Group Sessions</CardTitle>
                 <CardDescription className="text-french-blue/70">
-                  Interactive classes with maximum 8 students for personalised attention
+                  Interactive small-group classes for personalised attention
                 </CardDescription>
               </CardHeader>
             </Card>

@@ -41,7 +41,7 @@ export const businessStructuredData = {
         "itemOffered": {
           "@type": "Course",
           "name": "Adult Group French Classes",
-          "description": "Small group French conversation classes for adults (max 8 students)",
+          "description": "Small group French conversation classes for adults",
           "provider": {
             "@type": "EducationalOrganization",
             "name": "French Flow"
