@@ -98,6 +98,8 @@ const Blog = () => {
         description="Discover French language tips, cultural insights, and learning strategies on the French Flow blog. Expert advice from a native French teacher in South East London."
         keywords="French learning blog, French language tips, French culture, French learning strategies, French teacher blog, French language advice, French learning resources"
         url="/blog"
+        image={blogPosts[0]?.image || undefined}
+        type="website"
       />
       <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       {/* Hero Section */}
