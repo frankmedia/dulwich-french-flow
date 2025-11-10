@@ -20,7 +20,9 @@ export default async function handler(req: any, res: any) {
       `content/blog/posts/${slug}.json`
     );
 
-    const site = "https://frenchflow.co.uk";
+    const host = (req.headers["host"] as string) || "frenchflow.co.uk";
+    const proto = ((req.headers["x-forwarded-proto"] as string) || "https").split(",")[0];
+    const site = `${proto}://${host}`;
     const url = `${site}/blog/${encodeURIComponent(slug)}`;
     const title = post?.title || "French Flow Article";
     const description = (post?.content || "").substring(0, 180).trim();

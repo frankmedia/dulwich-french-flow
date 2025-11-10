@@ -4,6 +4,13 @@
   "outputDirectory": "dist",
   "routes": [
     {
+      "src": "/blog/(.*)",
+      "has": [
+        { "type": "header", "key": "user-agent", "value": "(?i)(facebookexternalhit|Twitterbot|Slackbot|Discordbot|LinkedInBot|TelegramBot|WhatsApp)" }
+      ],
+      "dest": "/api/share/blog/$1"
+    },
+    {
       "src": "/share/blog/(.*)",
       "dest": "/api/share/blog/$1"
     },
