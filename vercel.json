@@ -4,6 +4,10 @@
   "outputDirectory": "dist",
   "routes": [
     {
+      "src": "/share/blog/(.*)",
+      "dest": "/api/share/blog/$1"
+    },
+    {
       "src": "/robots.txt",
       "dest": "/robots.txt"
     },
