@@ -33,7 +33,7 @@ const Lessons = () => {
             {/* Left: Copy */}
             <div className="text-center lg:text-left">
               <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20 inline-flex items-center">
-                <span className="mr-2">🇫🇷</span>
+                <span className="emoji mr-2" aria-hidden>🇫🇷</span>
                 6-Week French Course in Dulwich
               </Badge>
               
@@ -150,7 +150,7 @@ const Lessons = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground">
-              What You'll Achieve in 6 Weeks
+              What You'll Achieve in 10 Weeks
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Each 6-week block focuses on practical skills you can use immediately in real-life situations

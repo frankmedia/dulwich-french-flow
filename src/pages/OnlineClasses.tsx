@@ -179,7 +179,7 @@ const OnlineClasses = () => {
               <div className="w-full h-96 bg-gradient-to-br from-french-blue/10 to-french-navy/10 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 {/* Decorative French Elements */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-8xl opacity-20">🇫🇷</div>
+                  <div className="emoji text-8xl opacity-20" aria-hidden>🇫🇷</div>
                 </div>
                 
                 {/* Content Card */}

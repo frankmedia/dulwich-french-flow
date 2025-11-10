@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure colored emoji render across platforms */
+.emoji {
+  font-family: 'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji',sans-serif;
+}
+
 /* Leaflet CSS */
 @import 'leaflet/dist/leaflet.css';
 

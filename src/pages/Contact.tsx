@@ -262,7 +262,7 @@ This message was sent from the French Flow website contact form.`
                   {/* French Level */}
                   <div className="space-y-2">
                     <label htmlFor="frenchLevel" className="block text-sm font-semibold text-french-navy">
-                      🇫🇷 Your French Level
+                      <span className="emoji" aria-hidden>🇫🇷</span> Your French Level
                     </label>
                     <Input 
                       id="frenchLevel" 
@@ -614,11 +614,11 @@ This message was sent from the French Flow website contact form.`
               </div>
             </div>
             <div className="flex items-center justify-center mb-4">
-              <span className="text-4xl mr-3">🇫🇷</span>
+              <span className="emoji text-4xl mr-3" aria-hidden>🇫🇷</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold">
                 Common Questions
               </h2>
-              <span className="text-4xl ml-3">🇫🇷</span>
+              <span className="emoji text-4xl ml-3" aria-hidden>🇫🇷</span>
             </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Quick answers to help you take the next step
