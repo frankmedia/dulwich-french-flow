@@ -1,4 +1,4 @@
-import { getJsonFile } from "../../../_lib/github.js";
+import { getJsonFile } from "../../_lib/github.js";
 
 function escapeHtml(input: string): string {
   return (input || "")
