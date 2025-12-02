@@ -121,12 +121,12 @@ const BlogPost = () => {
         keywords="French learning, French language, French culture, French tips, French teacher, South East London, French lessons"
         url={`/blog/${slug}`}
         type="article"
-        image={post?.image || "https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg"}
+        image={post?.image || "https://hxzxyrlkaczsmhgf.public.blob.vercel-storage.com/blog/1761586133241-584001331-La_Vieille_Ville_d_Annecy-Gilles_Piel-10272-ukvpHVift8lobe12TxPGFAX1EWSf5Z.jpg"}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           headline: post?.title || "French Learning Article",
-          image: post?.image ? [post.image] : ["https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg"],
+          image: post?.image ? [post.image] : ["https://hxzxyrlkaczsmhgf.public.blob.vercel-storage.com/blog/1761586133241-584001331-La_Vieille_Ville_d_Annecy-Gilles_Piel-10272-ukvpHVift8lobe12TxPGFAX1EWSf5Z.jpg"],
           datePublished: post?.date || new Date().toISOString(),
           mainEntityOfPage: {
             "@type": "WebPage",

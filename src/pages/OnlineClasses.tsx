@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Bell, Calendar, Video, Users, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import FrenchFlag from "@/components/FrenchFlag";
 
 const OnlineClasses = () => {
   return (
@@ -179,7 +180,7 @@ const OnlineClasses = () => {
               <div className="w-full h-96 bg-gradient-to-br from-french-blue/10 to-french-navy/10 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 {/* Decorative French Elements */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="emoji text-8xl opacity-20" aria-hidden>🇫🇷</div>
+                  <FrenchFlag className="text-8xl opacity-20 w-32 h-auto" />
                 </div>
                 
                 {/* Content Card */}
@@ -357,7 +358,7 @@ const OnlineClasses = () => {
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Calendar className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-french-navy">6-Week Blocks</CardTitle>
+                <CardTitle className="text-xl text-french-navy">10-Week Blocks</CardTitle>
                 <CardDescription className="text-french-blue/70">
                   Same proven structure as our in-person classes, delivered online
                 </CardDescription>

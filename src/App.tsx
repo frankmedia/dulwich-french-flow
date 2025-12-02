@@ -10,10 +10,10 @@ import About from "./pages/About";
 import Lessons from "./pages/Lessons";
 import OnlineClasses from "./pages/OnlineClasses";
 import Classes from "./pages/Classes";
-import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import Terms from "./pages/Terms";
@@ -41,9 +41,9 @@ const App = () => (
           <Route path="/lessons" element={<Lessons />} />
           <Route path="/online-classes" element={<OnlineClasses />} />
           <Route path="/classes" element={<Classes />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/edit/:slug" element={<Admin />} />

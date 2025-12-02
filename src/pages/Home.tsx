@@ -385,7 +385,7 @@ const Home = () => {
                 <CarouselItem>
                   <div className="text-center px-4">
                     <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
-                      “Feedback from an A-Level parent: Thank you so much for my daughter’s session today. She came home so positive and really enjoyed her time with you. And thank you for all your inspiration, she has a completely different attitude to French!”
+                      “Thank you so much for my daughter’s session today. She came home so positive and really enjoyed her time with you. And thank you for all your inspiration, she has a completely different attitude to French!”
                     </blockquote>
                     <cite className="text-lg text-muted-foreground">An A-Level parent</cite>
                   </div>
@@ -415,7 +415,7 @@ const Home = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
-              <Link to="/pricing">
+              <Link to="/classes#adults">
                 View Pricing
               </Link>
             </Button>

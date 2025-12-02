@@ -15,7 +15,7 @@ const SEO: React.FC<SEOProps> = ({
   title,
   description,
   keywords,
-  image = "https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg",
+  image = "https://hxzxyrlkaczsmhgf.public.blob.vercel-storage.com/blog/1761586133241-584001331-La_Vieille_Ville_d_Annecy-Gilles_Piel-10272-ukvpHVift8lobe12TxPGFAX1EWSf5Z.jpg",
   url = "https://frenchflow.co.uk",
   type = "website",
   structuredData

@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import frenchBooks from "@/assets/french-books.png";
 import SEO from "@/components/SEO";
+import FrenchFlag from "@/components/FrenchFlag";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -261,8 +262,8 @@ This message was sent from the French Flow website contact form.`
                   
                   {/* French Level */}
                   <div className="space-y-2">
-                    <label htmlFor="frenchLevel" className="block text-sm font-semibold text-french-navy">
-                      <span className="emoji" aria-hidden>🇫🇷</span> Your French Level
+                    <label htmlFor="frenchLevel" className="block text-sm font-semibold text-french-navy flex items-center gap-2">
+                      <FrenchFlag className="w-5 h-auto" /> Your French Level
                     </label>
                     <Input 
                       id="frenchLevel" 
@@ -604,118 +605,7 @@ This message was sent from the French Flow website contact form.`
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-secondary/20">
-        <div className="container mx-auto px-4 max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
-                <HelpCircle className="w-6 h-6 text-white" />
-              </div>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <span className="emoji text-4xl mr-3" aria-hidden>🇫🇷</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold">
-                Common Questions
-              </h2>
-              <span className="emoji text-4xl ml-3" aria-hidden>🇫🇷</span>
-            </div>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Quick answers to help you take the next step
-            </p>
-          </div>
-
-          <Card className="shadow-elegant border-border/50">
-            <CardContent className="p-8">
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1" className="border-b border-border/50">
-                  <AccordionTrigger className="text-left hover:no-underline py-6">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="font-heading font-semibold text-lg text-foreground">
-                        How do I know if I'm the right level?
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-6">
-                    <div className="pl-12">
-                      <p className="text-muted-foreground leading-relaxed">
-                        That's exactly what our free consultation is for! In 30 minutes, 
-                        I can assess your current level and recommend the perfect starting point.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-2" className="border-b border-border/50">
-                  <AccordionTrigger className="text-left hover:no-underline py-6">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <Calendar className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="font-heading font-semibold text-lg text-foreground">
-                        What if I can't commit to all 10 weeks?
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-6">
-                    <div className="pl-12">
-                      <p className="text-muted-foreground leading-relaxed">
-                        While the 6-week structure works best, we can discuss alternatives 
-                        during your consultation. I'm flexible and want to find what works for you.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-3" className="border-b border-border/50">
-                  <AccordionTrigger className="text-left hover:no-underline py-6">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <MessageCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="font-heading font-semibold text-lg text-foreground">
-                        Do you offer private lessons?
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-6">
-                    <div className="pl-12">
-                      <p className="text-muted-foreground leading-relaxed">
-                        Yes! While group classes are my specialty, I do offer private lessons 
-                        for specific needs. Let's discuss what would work best during your consultation.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-4">
-                  <AccordionTrigger className="text-left hover:no-underline py-6">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <ArrowRight className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="font-heading font-semibold text-lg text-foreground">
-                        What happens after the 10-week block?
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-6">
-                    <div className="pl-12">
-                      <p className="text-muted-foreground leading-relaxed">
-                        Most students continue with the next level block! We'll assess your 
-                        progress and plan your continued French journey together.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      {/* FAQ Section Removed and moved to /faq */}
       </div>
     </>
   );

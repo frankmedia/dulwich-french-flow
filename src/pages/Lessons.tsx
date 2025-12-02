@@ -16,14 +16,15 @@ import {
 } from "lucide-react";
 import groupClasses from "@/assets/group-classes.png";
 import SEO from "@/components/SEO";
+import FrenchFlag from "@/components/FrenchFlag";
 
 const Lessons = () => {
   return (
     <div className="min-h-screen pt-20" style={{ paddingTop: 'calc(5rem + 10px)' }}>
       <SEO
-        title="6-Week French Confidence Course in Dulwich"
-        description="Structured 6-week French conversation blocks for adults in Dulwich. Small groups to rebuild confidence."
-        keywords="Dulwich French course, 6-week French, adult French classes"
+        title="10-Week French Confidence Course in Dulwich"
+        description="Structured 10-week French conversation blocks for adults in Dulwich. Small groups to rebuild confidence."
+        keywords="Dulwich French course, 10-week French, adult French classes"
         url="/lessons"
       />
       {/* Hero Section */}
@@ -33,16 +34,16 @@ const Lessons = () => {
             {/* Left: Copy */}
             <div className="text-center lg:text-left">
               <Badge className="mb-6 bg-accent/10 text-accent-foreground border border-accent/20 inline-flex items-center">
-                <span className="emoji mr-2" aria-hidden>🇫🇷</span>
-                6-Week French Course in Dulwich
+                <FrenchFlag className="mr-2" />
+                10-Week French Course in Dulwich
               </Badge>
               
               <h1 className="text-4xl md:text-5xl lg:text-5xl font-heading font-bold mb-6 leading-tight text-foreground">
-                6-Week French Confidence Course
+                10-Week French Confidence Course
               </h1>
               
               <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-2xl lg:max-w-none mx-auto lg:mx-0 leading-relaxed">
-                Structured 6-week French conversation blocks designed for adults who want to rebuild their confidence. 
+                Structured 10-week French conversation blocks designed for adults who want to rebuild their confidence. 
                 Small group classes in Dulwich, South East London.
               </p>
               
@@ -62,7 +63,7 @@ const Lessons = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-elegant">
                 <img 
                   src={groupClasses}
-                  alt="6-week French course group classes in Dulwich"
+                  alt="10-week French course group classes in Dulwich"
                   className="w-full object-contain"
                 />
               </div>
@@ -80,7 +81,7 @@ const Lessons = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               You remember some French from school, maybe you can read it fairly well, 
-              but speaking? That's where the confidence disappeared. Our 6-week course is 
+              but speaking? That's where the confidence disappeared. Our 10-week course is 
               designed specifically for people just like you.
             </p>
           </div>
@@ -120,7 +121,7 @@ const Lessons = () => {
                   <Calendar className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="font-heading font-semibold text-xl mb-4 text-foreground group-hover:text-yellow-600 transition-colors duration-300">
-                  6-Week Blocks
+                  10-Week Blocks
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Structured progression with clear goals and measurable results
@@ -153,7 +154,7 @@ const Lessons = () => {
               What You'll Achieve in 10 Weeks
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Each 6-week block focuses on practical skills you can use immediately in real-life situations
+              Each 10-week block focuses on practical skills you can use immediately in real-life situations
             </p>
           </div>
 
@@ -222,7 +223,7 @@ const Lessons = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              How Our 6-Week Blocks Work
+              How Our 10-Week Blocks Work
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A proven structure that builds confidence week by week
@@ -233,7 +234,7 @@ const Lessons = () => {
             <Card className="shadow-soft">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <Badge>Weeks 1-2</Badge>
+                  <Badge>Weeks 1-3</Badge>
                   <Coffee className="w-5 h-5 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-xl">Foundation & Comfort</CardTitle>
@@ -251,7 +252,7 @@ const Lessons = () => {
             <Card className="shadow-soft">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <Badge>Weeks 3-4</Badge>
+                  <Badge>Weeks 4-7</Badge>
                   <MessageCircle className="w-5 h-5 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-xl">Active Communication</CardTitle>
@@ -269,7 +270,7 @@ const Lessons = () => {
             <Card className="shadow-soft">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <Badge>Weeks 5-6</Badge>
+                  <Badge>Weeks 8-10</Badge>
                   <Globe className="w-5 h-5 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-xl">Fluent Expression</CardTitle>
@@ -295,7 +296,7 @@ const Lessons = () => {
               Start with a Free 30-Minute Consultation
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Before you commit to a 6-week block, let's chat! I'll assess your current level, 
+              Before you commit to a 10-week block, let's chat! I'll assess your current level, 
               understand your goals, and explain exactly how our program can help you regain 
               your French confidence.
             </p>

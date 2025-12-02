@@ -142,7 +142,7 @@ export const testimonialStructuredData = {
         "@type": "Person",
         "name": "Sarah M."
       },
-      "reviewBody": "After 20 years since my A-levels, I thought my French was lost forever. The 6-week course brought it all back and gave me the confidence to actually use it. I'm now planning my first trip to France in decades!",
+      "reviewBody": "After 20 years since my A-levels, I thought my French was lost forever. The 10-week course brought it all back and gave me the confidence to actually use it. I'm now planning my first trip to France in decades!",
       "publisher": {
         "@type": "Organization",
         "name": "French Flow"

@@ -17,7 +17,7 @@ const Terms = () => {
           </p>
           <h2 className="text-2xl font-heading font-semibold mt-8 mb-3">Bookings & Payments</h2>
           <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-            <li>Payment for each 6-week block is due before the first lesson.</li>
+            <li>Payment for each 10-week block is due before the first lesson.</li>
             <li>We accept bank transfer, card payment, or cash.</li>
           </ul>
           <h2 className="text-2xl font-heading font-semibold mt-8 mb-3">Cancellations</h2>

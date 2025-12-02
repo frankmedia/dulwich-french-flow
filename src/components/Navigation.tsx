@@ -33,8 +33,9 @@ const Navigation = () => {
       ]
     },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
-    { name: "Blog", path: "/blog" }
+    { name: "FAQ", path: "/faq" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact", cta: true }
   ];
 
   return (
@@ -93,6 +94,15 @@ const Navigation = () => {
                       </div>
                     )}
                   </div>
+                ) : item.cta ? (
+                   <Button
+                     asChild
+                     className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-sm transition-all duration-300 hover:scale-105"
+                   >
+                     <Link to={item.path}>
+                       {item.name}
+                     </Link>
+                   </Button>
                 ) : (
                   <Link
                     to={item.path}
@@ -145,18 +155,30 @@ const Navigation = () => {
                   <div className="space-y-4 text-center w-full">
                     {navItems.map((item) => (
                       <div key={item.path}>
-                        <Link
-                          to={item.path}
-                          onClick={() => setIsMenuOpen(false)}
-                          className={cn(
-                            "block py-3 font-medium text-lg transition-colors uppercase tracking-wider",
-                            location.pathname === item.path
-                              ? "text-primary"
-                              : "text-muted-foreground hover:text-primary"
-                          )}
-                        >
-                          {item.name}
-                        </Link>
+                        {item.cta ? (
+                          <Button 
+                            asChild 
+                            className="w-full mt-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-sm"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            <Link to={item.path}>
+                              {item.name}
+                            </Link>
+                          </Button>
+                        ) : (
+                          <Link
+                            to={item.path}
+                            onClick={() => setIsMenuOpen(false)}
+                            className={cn(
+                              "block py-3 font-medium text-lg transition-colors uppercase tracking-wider",
+                              location.pathname === item.path
+                                ? "text-primary"
+                                : "text-muted-foreground hover:text-primary"
+                            )}
+                          >
+                            {item.name}
+                          </Link>
+                        )}
                         {item.dropdown && (
                           <div className="ml-4 space-y-2">
                             {item.dropdown.map((dropdownItem) => (

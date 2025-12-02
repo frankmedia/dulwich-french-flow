@@ -137,7 +137,7 @@ const Classes = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                    <span className="text-french-blue/80">8-week structured blocks</span>
+                    <span className="text-french-blue/80">10-week structured blocks</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
@@ -153,7 +153,7 @@ const Classes = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-french-blue/80">10-week block:</span>
-                      <span className="font-bold text-lg text-french-navy">£180</span>
+                      <span className="font-bold text-lg text-french-navy">£220</span>
                     </div>
                     <div className="text-sm text-french-blue/60 mt-3">
                       * All materials included
@@ -207,8 +207,8 @@ const Classes = () => {
                       <span className="font-bold text-lg text-french-navy">£45</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-french-blue/80">5-session package:</span>
-                      <span className="font-bold text-lg text-french-navy">£200</span>
+                      <span className="text-french-blue/80">10-session package:</span>
+                      <span className="font-bold text-lg text-french-navy">£420</span>
                     </div>
                     <div className="text-sm text-french-blue/60 mt-3">
                       * All materials included
