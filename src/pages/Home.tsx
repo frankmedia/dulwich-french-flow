@@ -32,12 +32,12 @@ const Home = () => {
     <>
       <SEO
         title="French Flow - French Lessons in South East London"
-        description="Free 30-min assessment. Rediscover your French confidence with French Flow. Small group and 1:1 French lessons for adults in South East London. GCSE and A-Level exam preparation available."
+        description="Free 30-min assessment"
         keywords="French lessons, French classes, French teacher, South East London, Dulwich, Forest Hill, GCSE French, A-Level French, French conversation, French exam preparation, native French speaker"
         url="/"
         structuredData={[{
           ...businessStructuredData,
-          description: "Free 30-min assessment. Rediscover your French confidence with French Flow. Small group and 1:1 French lessons for adults in South East London. GCSE and A-Level exam preparation available."
+          description: "Free 30-min assessment."
         }, testimonialStructuredData]}
       />
       <div className="min-h-screen pt-32">
