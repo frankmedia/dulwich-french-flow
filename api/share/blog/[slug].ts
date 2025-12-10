@@ -1,4 +1,6 @@
-// Fetch post JSON via our API instead of hitting GitHub directly
+import { getJsonFile } from '../../_lib/github';
+
+interface Post { slug: string; title: string; content: string; date: string; image?: string | null }
 
 function escapeHtml(input: string): string {
   return (input || "")
@@ -18,14 +20,19 @@ export default async function handler(req: any, res: any) {
 
     const host = (req.headers["host"] as string) || "frenchflow.co.uk";
     const proto = ((req.headers["x-forwarded-proto"] as string) || "https").split(",")[0];
-    const site = `${proto}://${host}`;
-    const url = `${site}/blog/${encodeURIComponent(slug)}`;
-    const apiRes = await fetch(`${site}/api/blog/posts/${encodeURIComponent(slug)}`);
-    if (!apiRes.ok) {
-      res.status(500).send("Failed to load post");
+    const url = `${proto}://${host}/blog/${encodeURIComponent(slug)}`;
+
+    let post: Post;
+    try {
+      const result = await getJsonFile<Post>(`content/blog/posts/${slug}.json`);
+      post = result.data;
+    } catch (err) {
+      console.error("Failed to load post from GitHub:", err);
+      // Fallback or 404
+      res.status(404).send("Post not found");
       return;
     }
-    const post: { title: string; content: string; image?: string; date?: string } = await apiRes.json();
+
     const title = post?.title || "French Flow Article";
     const description = (post?.content || "").substring(0, 180).trim();
     const image = post?.image || `https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg`;
