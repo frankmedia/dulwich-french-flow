@@ -1,4 +1,4 @@
-import { getJsonFile } from '../../_lib/github';
+import { getJsonFile } from '../../_lib/github.js';
 
 interface Post { slug: string; title: string; content: string; date: string; image?: string | null }
 
