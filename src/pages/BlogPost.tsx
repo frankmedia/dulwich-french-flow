@@ -237,7 +237,7 @@ const BlogPost = () => {
                   Ready to Start Your French Journey?
                 </h2>
                 <p className="text-primary-foreground/90 mb-6 max-w-2xl mx-auto">
-                  Join our friendly French classes in Dulwich and rediscover your love for the language.
+                  Join our friendly French classes in Forest Hill and rediscover your love for the language.
                 </p>
                 <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
                   <Link to="/contact">
