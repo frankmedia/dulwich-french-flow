@@ -733,8 +733,8 @@ const Admin: React.FC = () => {
                 <textarea
                   id="content-textarea"
                   value={editingPost.content}
-                  onChange={(e) => setEditingPost({ ...editingPost, content: e.target.value })}
-                  className="w-full px-4 py-3 border border-french-cream rounded-lg focus:ring-2 focus:ring-french-blue focus:border-transparent"
+                  onChange={(e) => setEditingPost({ ...editingPost, content: e.target.value.replace(/\r\n/g, '\n') })}
+                  className="w-full px-4 py-3 border border-french-cream rounded-lg focus:ring-2 focus:ring-french-blue focus:border-transparent font-mono whitespace-pre-wrap"
                   rows={12}
                   placeholder="Write your blog post content here..."
                   required
