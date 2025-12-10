@@ -166,18 +166,18 @@ const Navigation = () => {
                             </Link>
                           </Button>
                         ) : (
-                          <Link
-                            to={item.path}
-                            onClick={() => setIsMenuOpen(false)}
-                            className={cn(
-                              "block py-3 font-medium text-lg transition-colors uppercase tracking-wider",
-                              location.pathname === item.path
-                                ? "text-primary"
-                                : "text-muted-foreground hover:text-primary"
-                            )}
-                          >
-                            {item.name}
-                          </Link>
+                        <Link
+                          to={item.path}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={cn(
+                            "block py-3 font-medium text-lg transition-colors uppercase tracking-wider",
+                            location.pathname === item.path
+                              ? "text-primary"
+                              : "text-muted-foreground hover:text-primary"
+                          )}
+                        >
+                          {item.name}
+                        </Link>
                         )}
                         {item.dropdown && (
                           <div className="ml-4 space-y-2">
