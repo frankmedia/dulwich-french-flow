@@ -204,10 +204,10 @@ const BlogPost = () => {
           <Card className="shadow-soft">
             <CardContent className="p-8 md:p-12">
               <div 
-                className="prose prose-lg max-w-none [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8"
+                className="prose prose-lg max-w-none [&>p]:mb-6 [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8 [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:mb-6 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mb-4 [&>h2]:mt-8 [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mb-3 [&>h3]:mt-6 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>blockquote]:border-l-4 [&>blockquote]:border-french-blue/30 [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:mb-6"
                 style={{
                   fontFamily: 'Nunito, Inter, system-ui, sans-serif',
-                  lineHeight: '1.7',
+                  lineHeight: '1.8',
                   color: 'hsl(var(--foreground))'
                 }}
               >
