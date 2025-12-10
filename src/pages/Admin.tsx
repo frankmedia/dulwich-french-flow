@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SEO from "@/components/SEO";
 import { useNavigate, useParams } from 'react-router-dom';
-import { Plus, Edit, Trash2, Eye, LogOut, Save, X } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, LogOut, Save, X, Bold, Italic, List, ListOrdered, Link as LinkIcon, Quote, Heading1, Heading2, Heading3 } from 'lucide-react';
 
 interface BlogPost {
   slug: string;
@@ -376,18 +376,7 @@ const Admin: React.FC = () => {
         
         const { url } = await uploadRes.json();
         
-        const markdownImage = `\n![${file.name}](${url})\n`;
-        const textarea = document.getElementById('content-textarea') as HTMLTextAreaElement;
-        
-        if (textarea) {
-            const start = textarea.selectionStart;
-            const end = textarea.selectionEnd;
-            const text = editingPost.content;
-            const newText = text.substring(0, start) + markdownImage + text.substring(end);
-            setEditingPost({ ...editingPost, content: newText });
-        } else {
-             setEditingPost({ ...editingPost, content: editingPost.content + markdownImage });
-        }
+        insertAtCursor(`\n![${file.name}](${url})\n`);
         
         setSuccess('Image inserted into content!');
         setTimeout(() => setSuccess(''), 2500);
@@ -397,6 +386,48 @@ const Admin: React.FC = () => {
         setLoading(false);
         e.target.value = '';
       }
+    }
+  };
+
+  const insertAtCursor = (textToInsert: string) => {
+    if (!editingPost) return;
+    
+    const textarea = document.getElementById('content-textarea') as HTMLTextAreaElement;
+    if (textarea) {
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const text = editingPost.content;
+        const newText = text.substring(0, start) + textToInsert + text.substring(end);
+        setEditingPost({ ...editingPost, content: newText });
+        
+        // Restore focus and cursor position after React re-render
+        setTimeout(() => {
+            textarea.focus();
+            textarea.setSelectionRange(start + textToInsert.length, start + textToInsert.length);
+        }, 0);
+    } else {
+         setEditingPost({ ...editingPost, content: editingPost.content + textToInsert });
+    }
+  };
+
+  const wrapSelection = (prefix: string, suffix: string = '') => {
+    if (!editingPost) return;
+    
+    const textarea = document.getElementById('content-textarea') as HTMLTextAreaElement;
+    if (textarea) {
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const text = editingPost.content;
+        const selectedText = text.substring(start, end);
+        const newText = text.substring(0, start) + prefix + selectedText + suffix + text.substring(end);
+        setEditingPost({ ...editingPost, content: newText });
+        
+        // Restore focus and cursor position after React re-render
+        setTimeout(() => {
+            textarea.focus();
+            const newCursorPos = end + prefix.length + suffix.length;
+            textarea.setSelectionRange(newCursorPos, newCursorPos);
+        }, 0);
     }
   };
 
@@ -710,24 +741,105 @@ const Admin: React.FC = () => {
               </div>
 
               <div>
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
                   <label className="block text-sm font-medium text-french-navy">
-                    Content (Markdown and HTML supported - use ![alt](url) or &lt;img src="url"&gt; for images)
+                    Content (Markdown)
                   </label>
-                  <div className="relative">
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleContentImageUpload}
-                      className="hidden"
-                      id="content-image-upload"
-                    />
-                    <label
-                      htmlFor="content-image-upload"
-                      className="cursor-pointer text-sm bg-french-cream px-3 py-1 rounded hover:bg-french-blue hover:text-white transition-colors flex items-center gap-1"
+                  
+                  {/* Markdown Toolbar */}
+                  <div className="flex flex-wrap gap-1 bg-white border border-french-cream rounded-md p-1 shadow-sm">
+                    <button
+                      type="button"
+                      onClick={() => wrapSelection('**', '**')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Bold"
                     >
-                      <Plus size={16} /> Insert Image
-                    </label>
+                      <Bold size={16} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => wrapSelection('*', '*')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Italic"
+                    >
+                      <Italic size={16} />
+                    </button>
+                    <div className="w-px bg-french-cream mx-1 self-stretch"></div>
+                    <button
+                      type="button"
+                      onClick={() => insertAtCursor('\n# ')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Heading 1"
+                    >
+                      <Heading1 size={16} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => insertAtCursor('\n## ')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Heading 2"
+                    >
+                      <Heading2 size={16} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => insertAtCursor('\n### ')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Heading 3"
+                    >
+                      <Heading3 size={16} />
+                    </button>
+                    <div className="w-px bg-french-cream mx-1 self-stretch"></div>
+                    <button
+                      type="button"
+                      onClick={() => insertAtCursor('\n- ')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Bullet List"
+                    >
+                      <List size={16} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => insertAtCursor('\n1. ')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Numbered List"
+                    >
+                      <ListOrdered size={16} />
+                    </button>
+                    <div className="w-px bg-french-cream mx-1 self-stretch"></div>
+                    <button
+                      type="button"
+                      onClick={() => wrapSelection('[', '](url)')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Link"
+                    >
+                      <LinkIcon size={16} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => insertAtCursor('\n> ')}
+                      className="p-1.5 hover:bg-french-cream rounded text-french-blue"
+                      title="Quote"
+                    >
+                      <Quote size={16} />
+                    </button>
+                    <div className="w-px bg-french-cream mx-1 self-stretch"></div>
+                    <div className="relative">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleContentImageUpload}
+                        className="hidden"
+                        id="content-image-upload"
+                      />
+                      <label
+                        htmlFor="content-image-upload"
+                        className="cursor-pointer p-1.5 hover:bg-french-cream rounded text-french-blue flex items-center"
+                        title="Insert Image"
+                      >
+                        <Plus size={16} />
+                      </label>
+                    </div>
                   </div>
                 </div>
                 <textarea
@@ -735,7 +847,7 @@ const Admin: React.FC = () => {
                   value={editingPost.content}
                   onChange={(e) => setEditingPost({ ...editingPost, content: e.target.value.replace(/\r\n/g, '\n') })}
                   className="w-full px-4 py-3 border border-french-cream rounded-lg focus:ring-2 focus:ring-french-blue focus:border-transparent font-mono whitespace-pre-wrap"
-                  rows={12}
+                  rows={16}
                   placeholder="Write your blog post content here..."
                   required
                 />
