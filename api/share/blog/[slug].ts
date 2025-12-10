@@ -28,9 +28,14 @@ export default async function handler(req: any, res: any) {
       post = result.data;
     } catch (err) {
       console.error("Failed to load post from GitHub:", err);
-      // Fallback or 404
-      res.status(404).send("Post not found");
-      return;
+      // Fallback to default metadata instead of 404 to ensure bots see something
+      post = {
+        slug,
+        title: "French Flow Blog",
+        content: "Read this article on French Flow.",
+        date: new Date().toISOString(),
+        image: "https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg"
+      };
     }
 
     const title = post?.title || "French Flow Article";
