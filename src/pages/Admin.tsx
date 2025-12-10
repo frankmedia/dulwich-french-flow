@@ -710,10 +710,28 @@ const Admin: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-french-navy mb-2">
-                  Content (Markdown and HTML supported - use ![alt](url) or &lt;img src="url"&gt; for images)
-                </label>
+                <div className="flex justify-between items-center mb-2">
+                  <label className="block text-sm font-medium text-french-navy">
+                    Content (Markdown and HTML supported - use ![alt](url) or &lt;img src="url"&gt; for images)
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleContentImageUpload}
+                      className="hidden"
+                      id="content-image-upload"
+                    />
+                    <label
+                      htmlFor="content-image-upload"
+                      className="cursor-pointer text-sm bg-french-cream px-3 py-1 rounded hover:bg-french-blue hover:text-white transition-colors flex items-center gap-1"
+                    >
+                      <Plus size={16} /> Insert Image
+                    </label>
+                  </div>
+                </div>
                 <textarea
+                  id="content-textarea"
                   value={editingPost.content}
                   onChange={(e) => setEditingPost({ ...editingPost, content: e.target.value })}
                   className="w-full px-4 py-3 border border-french-cream rounded-lg focus:ring-2 focus:ring-french-blue focus:border-transparent"
