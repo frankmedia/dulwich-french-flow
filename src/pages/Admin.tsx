@@ -349,6 +349,57 @@ const Admin: React.FC = () => {
     }
   };
 
+  const handleContentImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!editingPost) return;
+    
+    const file = e.target.files?.[0];
+    if (file) {
+      setLoading(true);
+      try {
+        const auth = localStorage.getItem('adminAuth') || '';
+        const uploadRes = await fetch('/api/blog/upload', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Basic ${auth}`,
+            'Content-Type': file.type || 'application/octet-stream',
+            'x-filename': file.name
+          },
+          body: await file.arrayBuffer()
+        });
+        
+        if (!uploadRes.ok) {
+          const text = await uploadRes.text();
+          setError(`Image upload failed: ${uploadRes.status} ${uploadRes.statusText} - ${text}`);
+          setLoading(false);
+          return;
+        }
+        
+        const { url } = await uploadRes.json();
+        
+        const markdownImage = `\n![${file.name}](${url})\n`;
+        const textarea = document.getElementById('content-textarea') as HTMLTextAreaElement;
+        
+        if (textarea) {
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = editingPost.content;
+            const newText = text.substring(0, start) + markdownImage + text.substring(end);
+            setEditingPost({ ...editingPost, content: newText });
+        } else {
+             setEditingPost({ ...editingPost, content: editingPost.content + markdownImage });
+        }
+        
+        setSuccess('Image inserted into content!');
+        setTimeout(() => setSuccess(''), 2500);
+      } catch (err) {
+        setError('Image upload failed: ' + err);
+      } finally {
+        setLoading(false);
+        e.target.value = '';
+      }
+    }
+  };
+
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-french-cream to-french-ivory flex items-center justify-center p-4">
@@ -660,7 +711,7 @@ const Admin: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-french-navy mb-2">
-                  Content (Markdown supported)
+                  Content (Markdown and HTML supported - use ![alt](url) or &lt;img src="url"&gt; for images)
                 </label>
                 <textarea
                   value={editingPost.content}

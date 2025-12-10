@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -201,18 +204,27 @@ const BlogPost = () => {
           <Card className="shadow-soft">
             <CardContent className="p-8 md:p-12">
               <div 
-                className="prose prose-lg max-w-none"
+                className="prose prose-lg max-w-none [&>img]:rounded-lg [&>img]:shadow-md [&>img]:my-8"
                 style={{
                   fontFamily: 'Nunito, Inter, system-ui, sans-serif',
                   lineHeight: '1.7',
                   color: 'hsl(var(--foreground))'
                 }}
               >
-                {post.content.split('\n').map((paragraph, index) => (
-                  <p key={index} className="mb-6 last:mb-0">
-                    {paragraph}
-                  </p>
-                ))}
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeRaw]}
+                  components={{
+                    img: ({node, ...props}) => (
+                      <img {...props} className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+                    ),
+                    a: ({node, ...props}) => (
+                      <a {...props} className="text-french-blue hover:underline" target="_blank" rel="noopener noreferrer" />
+                    )
+                  }}
+                >
+                  {post.content}
+                </ReactMarkdown>
               </div>
             </CardContent>
           </Card>

@@ -78,8 +78,23 @@ const Blog = () => {
 
   const getExcerpt = (content: string, maxLength: number = 150) => {
     if (!content) return '';
-    if (content.length <= maxLength) return content;
-    return content.substring(0, maxLength).trim() + '...';
+    
+    // Strip markdown image syntax ![...](...)
+    let plainText = content.replace(/!\[.*?\]\(.*?\)/g, '');
+    // Strip HTML tags
+    plainText = plainText.replace(/<[^>]*>/g, '');
+    // Strip markdown links [text](url) -> text
+    plainText = plainText.replace(/\[(.*?)\]\(.*?\)/g, '$1');
+    // Strip heading markers
+    plainText = plainText.replace(/^#+\s+/gm, '');
+    // Strip bold/italic markers
+    plainText = plainText.replace(/(\*\*|__)(.*?)\1/g, '$2');
+    plainText = plainText.replace(/(\*|_)(.*?)\1/g, '$2');
+    
+    plainText = plainText.trim();
+    
+    if (plainText.length <= maxLength) return plainText;
+    return plainText.substring(0, maxLength).trim() + '...';
   };
 
   const getReadTime = (content: string) => {
