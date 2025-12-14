@@ -170,6 +170,105 @@ This message was sent from the French Flow website contact form.`
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-french-navy mb-4">
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Choose the learning option that best fits your lifestyle and goals.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Group Classes Card */}
+            <Card className="border-2 border-french-cream hover:border-french-blue/50 transition-colors">
+              <CardHeader className="text-center pb-2">
+                <div className="w-16 h-16 bg-french-cream/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-3xl">👥</div>
+                </div>
+                <CardTitle className="text-2xl font-bold text-french-navy">Group Classes</CardTitle>
+                <p className="text-gray-600 mt-2">
+                  Join our warm and friendly small groups for conversation practice and structured learning in a supportive environment.
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <ul className="space-y-3">
+                  {[
+                    "Small groups",
+                    "Conversation-focused learning",
+                    "10-week structured blocks",
+                    "All levels welcome"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-french-red shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="pt-6 border-t border-gray-100">
+                  <div className="text-center mb-2">
+                    <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Pricing</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-french-cream/20 p-4 rounded-lg">
+                    <span className="font-semibold text-french-navy">10-week block</span>
+                    <span className="text-2xl font-bold text-french-blue">£220</span>
+                  </div>
+                  <p className="text-sm text-gray-500 text-center mt-3">* All materials included</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 1:1 Sessions Card */}
+            <Card className="border-2 border-french-cream hover:border-french-blue/50 transition-colors">
+              <CardHeader className="text-center pb-2">
+                <div className="w-16 h-16 bg-french-cream/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-3xl">👤</div>
+                </div>
+                <CardTitle className="text-2xl font-bold text-french-navy">1:1 Sessions</CardTitle>
+                <p className="text-gray-600 mt-2">
+                  Personalized lessons tailored to your specific goals, schedule, and learning pace. Perfect for focused improvement or specific needs.
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <ul className="space-y-3">
+                  {[
+                    "Completely personalised",
+                    "Flexible scheduling",
+                    "Focus on your specific goals",
+                    "Intensive progress"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-french-red shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="pt-6 border-t border-gray-100">
+                  <div className="text-center mb-2">
+                    <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Pricing</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center bg-french-cream/20 p-4 rounded-lg">
+                      <span className="font-semibold text-french-navy">Per session</span>
+                      <span className="text-2xl font-bold text-french-blue">£45</span>
+                    </div>
+                    <div className="flex justify-between items-center bg-french-blue/5 p-4 rounded-lg border border-french-blue/20">
+                      <span className="font-semibold text-french-navy">10-session package</span>
+                      <span className="text-2xl font-bold text-french-blue">£420</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
 
       {/* French-Themed Contact Form */}
       <section className="py-20 bg-gradient-to-br from-french-blue/5 via-white to-french-navy/5 relative overflow-hidden">
