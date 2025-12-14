@@ -352,21 +352,35 @@ This message was sent from the French Flow website contact form.`
                         <button
                           type="button"
                           onClick={() => setFormData(prev => ({ ...prev, adultClassType: 'group' }))}
-                          className={`p-4 rounded-lg border-2 transition-all duration-300 text-left ${
+                          className={`p-4 rounded-lg border-2 transition-all duration-300 text-left relative overflow-hidden group ${
                             formData.adultClassType === 'group' 
-                              ? 'border-french-blue bg-french-blue/10 text-french-blue' 
-                              : 'border-gray-200 hover:border-french-blue/50 bg-white'
+                              ? 'border-french-blue bg-french-blue/5' 
+                              : 'border-gray-200 hover:border-french-blue/30 bg-white'
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            <div className={`w-4 h-4 rounded-full border-2 ${
+                          <div className="flex items-start gap-3">
+                            <div className={`w-4 h-4 rounded-full border-2 mt-1 shrink-0 ${
                               formData.adultClassType === 'group' ? 'border-french-blue bg-french-blue' : 'border-gray-300'
                             }`}>
                               {formData.adultClassType === 'group' && <div className="w-2 h-2 bg-white rounded-full m-0.5"></div>}
                             </div>
-                            <div>
-                              <div className="font-semibold">Group Classes</div>
-                              <div className="text-sm text-gray-600">Small groups</div>
+                            <div className="w-full">
+                              <div className="flex justify-between items-start">
+                                <span className={`font-semibold text-lg ${formData.adultClassType === 'group' ? 'text-french-blue' : 'text-gray-700'}`}>
+                                  Group Classes
+                                </span>
+                              </div>
+                              <div className="text-sm text-gray-500 mb-3">Small groups (max 6)</div>
+                              
+                              <div className={`rounded p-3 border transition-colors ${formData.adultClassType === 'group' ? 'bg-white border-french-blue/30 shadow-sm' : 'bg-gray-50 border-gray-100'}`}>
+                                <div className="flex justify-between items-baseline mb-1">
+                                  <span className="text-sm font-medium text-french-navy">10-week block</span>
+                                  <span className="text-lg font-bold text-french-blue">£220</span>
+                                </div>
+                                <div className="text-xs text-gray-500 flex items-center gap-1">
+                                  <CheckCircle className="w-3 h-3" /> Materials included
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </button>
@@ -374,21 +388,36 @@ This message was sent from the French Flow website contact form.`
                         <button
                           type="button"
                           onClick={() => setFormData(prev => ({ ...prev, adultClassType: '1to1' }))}
-                          className={`p-4 rounded-lg border-2 transition-all duration-300 text-left ${
+                          className={`p-4 rounded-lg border-2 transition-all duration-300 text-left relative overflow-hidden group ${
                             formData.adultClassType === '1to1' 
-                              ? 'border-french-blue bg-french-blue/10 text-french-blue' 
-                              : 'border-gray-200 hover:border-french-blue/50 bg-white'
+                              ? 'border-french-blue bg-french-blue/5' 
+                              : 'border-gray-200 hover:border-french-blue/30 bg-white'
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            <div className={`w-4 h-4 rounded-full border-2 ${
+                          <div className="flex items-start gap-3">
+                            <div className={`w-4 h-4 rounded-full border-2 mt-1 shrink-0 ${
                               formData.adultClassType === '1to1' ? 'border-french-blue bg-french-blue' : 'border-gray-300'
                             }`}>
                               {formData.adultClassType === '1to1' && <div className="w-2 h-2 bg-white rounded-full m-0.5"></div>}
                             </div>
-                            <div>
-                              <div className="font-semibold">1:1 Sessions</div>
-                              <div className="text-sm text-gray-600">Personalised lessons</div>
+                            <div className="w-full">
+                              <div className="flex justify-between items-start">
+                                <span className={`font-semibold text-lg ${formData.adultClassType === '1to1' ? 'text-french-blue' : 'text-gray-700'}`}>
+                                  1:1 Sessions
+                                </span>
+                              </div>
+                              <div className="text-sm text-gray-500 mb-3">Personalised lessons</div>
+                              
+                              <div className={`rounded p-3 border transition-colors ${formData.adultClassType === '1to1' ? 'bg-white border-french-blue/30 shadow-sm' : 'bg-gray-50 border-gray-100'}`}>
+                                <div className="flex justify-between items-baseline mb-2">
+                                  <span className="text-sm font-medium text-french-navy">Per session</span>
+                                  <span className="text-lg font-bold text-french-blue">£45</span>
+                                </div>
+                                <div className="flex justify-between items-baseline pt-2 border-t border-gray-200/50">
+                                  <span className="text-sm font-medium text-french-navy">10 sessions</span>
+                                  <span className="text-lg font-bold text-french-blue">£420</span>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </button>
@@ -602,44 +631,6 @@ This message was sent from the French Flow website contact form.`
                 </form>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Simple Pricing Reference */}
-      <section className="py-12 bg-gray-50 border-t border-gray-100">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-2xl font-bold text-french-navy text-center mb-8">
-            Transparent Pricing
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Group Classes */}
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center hover:border-french-blue/30 transition-colors">
-              <div className="text-2xl mb-2">👥</div>
-              <h3 className="font-bold text-lg text-french-navy mb-1">Group Classes</h3>
-              <p className="text-gray-500 text-sm mb-4">10-week structured block</p>
-              <div className="mt-auto">
-                <span className="text-2xl font-bold text-french-blue">£220</span>
-                <span className="text-gray-400 text-xs block mt-1">materials included</span>
-              </div>
-            </div>
-
-            {/* 1:1 Sessions */}
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center hover:border-french-blue/30 transition-colors">
-              <div className="text-2xl mb-2">👤</div>
-              <h3 className="font-bold text-lg text-french-navy mb-1">1:1 Sessions</h3>
-              <p className="text-gray-500 text-sm mb-4">Tailored to your goals</p>
-              <div className="mt-auto space-y-2">
-                <div>
-                  <span className="text-xl font-bold text-french-blue">£45</span>
-                  <span className="text-gray-400 text-xs block">per session</span>
-                </div>
-                <div className="text-sm text-gray-500 pt-2 border-t border-gray-50 w-full">
-                  or <span className="font-semibold text-french-blue">£420</span> for 10 sessions
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
