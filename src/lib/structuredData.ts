@@ -2,19 +2,27 @@
 
 export const businessStructuredData = {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
+  "@type": ["LocalBusiness", "EducationalOrganization", "ProfessionalService"],
   "name": "French Flow",
   "description": "French language classes for adults and exam preparation in South East London. Small group and 1:1 lessons with native French speaker.",
   "url": "https://frenchflow.co.uk",
   "logo": "https://frenchflow.co.uk/french-flow-logo.png",
-  "image": "https://french-flow.vercel.app/assets/hero-illustration-BkCREZJs.jpg",
+  "image": "https://frenchflow.co.uk/french-flow-logo.png",
   "telephone": "+44-7812-345-678",
   "email": "barbara@frenchflow.co.uk",
+  "priceRange": "££",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "South East London",
-    "addressRegion": "London",
+    "streetAddress": "Dulwich",
+    "addressLocality": "London",
+    "addressRegion": "South East London",
+    "postalCode": "SE21",
     "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "51.4452",
+    "longitude": "-0.0858"
   },
   "founder": {
     "@type": "Person",
@@ -47,13 +55,13 @@ export const businessStructuredData = {
             "name": "French Flow"
           }
         },
-        "price": "20",
+        "price": "220",
         "priceCurrency": "GBP",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "20",
+          "price": "220",
           "priceCurrency": "GBP",
-          "unitText": "per session"
+          "unitText": "per 10-week block"
         }
       },
       {
@@ -120,17 +128,13 @@ export const businessStructuredData = {
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "12",
+    "ratingValue": "5",
+    "ratingCount": "4",
+    "reviewCount": "4",
     "bestRating": "5",
     "worstRating": "1"
-  }
-};
-
-export const testimonialStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
+  },
+  "review": [
     {
       "@type": "Review",
       "reviewRating": {
@@ -140,11 +144,107 @@ export const testimonialStructuredData = {
       },
       "author": {
         "@type": "Person",
-        "name": "Sarah M."
+        "name": "Parent of Year 2 student"
       },
-      "reviewBody": "After 20 years since my A-levels, I thought my French was lost forever. The 10-week course brought it all back and gave me the confidence to actually use it. I'm now planning my first trip to France in decades!",
-      "publisher": {
-        "@type": "Organization",
+      "reviewBody": "Thank you so much for making the French lessons such an interesting and innovative experience for Isla. She's clearly been having a really wonderful time."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Parent of A-Level student"
+      },
+      "reviewBody": "Thank you so much for my daughter's session today. She came home so positive and really enjoyed her time with you. And thank you for all your inspiration, she has a completely different attitude to French!"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Ian"
+      },
+      "reviewBody": "I've loved my lessons with Barbara at French Flow. She carefully tailors everything to my level and what I'm interested in, which makes learning feel natural and motivating. She's a joy to work with and always makes our sessions fun!"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Michal"
+      },
+      "reviewBody": "Barbara has taken my French to a new level. She tailors each lesson carefully to where I am, which means I feel challenged but never overwhelmed. She grounds everything in real life situations and culture which makes the language feel genuinely useful."
+    }
+  ]
+};
+
+export const testimonialStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "Review",
+      "position": 1,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Parent of Year 2 student"
+      },
+      "reviewBody": "Thank you so much for making the French lessons such an interesting and innovative experience for Isla. She's clearly been having a really wonderful time.",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "French Flow"
+      }
+    },
+    {
+      "@type": "Review",
+      "position": 2,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Ian"
+      },
+      "reviewBody": "I've loved my lessons with Barbara at French Flow. She carefully tailors everything to my level and what I'm interested in, which makes learning feel natural and motivating. She's a joy to work with and always makes our sessions fun!",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "French Flow"
+      }
+    },
+    {
+      "@type": "Review",
+      "position": 3,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Michal"
+      },
+      "reviewBody": "Barbara has taken my French to a new level. She tailors each lesson carefully to where I am, which means I feel challenged but never overwhelmed. She grounds everything in real life situations and culture which makes the language feel genuinely useful.",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
         "name": "French Flow"
       }
     }
