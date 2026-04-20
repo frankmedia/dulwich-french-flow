@@ -393,6 +393,22 @@ const Home = () => {
                     <cite className="text-lg text-muted-foreground">An A-Level parent</cite>
                   </div>
                 </CarouselItem>
+                <CarouselItem>
+                  <div className="text-center px-4">
+                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
+                      "I've loved my lessons with Barbara at French Flow. She carefully tailors everything to my level and what I'm interested in, which makes learning feel natural and motivating. She's a joy to work with and always makes our sessions fun!"
+                    </blockquote>
+                    <cite className="text-lg text-muted-foreground">Ian</cite>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="text-center px-4">
+                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
+                      "Barbara has taken my French to a new level. She tailors each lesson carefully to where I am, which means I feel challenged but never overwhelmed. She grounds everything in real life situations and culture which makes the language feel genuinely useful. We work across speaking, listening, reading and writing in a balanced way, and I leave each session feeling more confident and capable."
+                    </blockquote>
+                    <cite className="text-lg text-muted-foreground">Michal, B1 level</cite>
+                  </div>
+                </CarouselItem>
               </CarouselContent>
               <CarouselPrevious className="-left-4" />
               <CarouselNext className="-right-4" />

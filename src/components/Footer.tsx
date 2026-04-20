@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8 text-sm text-muted-foreground">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
-            <span className="font-medium text-foreground">French Flow</span> · Dulwich, South East London
+            <span className="font-medium text-foreground">French Flow</span> · Dulwich, Forest Hill, Sydenham, South East London
           </div>
           <nav className="flex flex-wrap items-center gap-4 justify-center md:justify-end">
             <Link to="/" className="hover:text-primary">Home</Link>
