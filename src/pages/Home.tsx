@@ -25,7 +25,6 @@ import heroIllustration from "@/assets/hero-illustration.jpg";
 import frenchClass from "@/assets/french-class.jpg";
 import SEO from "@/components/SEO";
 import { businessStructuredData, testimonialStructuredData } from "@/lib/structuredData";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Home = () => {
   return (
@@ -363,11 +362,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Carousel */}
-      <section className="py-32 bg-secondary/20">
+      {/* Testimonials Grid */}
+      <section className="py-24 bg-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex justify-center mb-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-french-navy mb-4">
+              What My Students Say
+            </h2>
+            <div className="flex justify-center">
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
@@ -375,44 +377,98 @@ const Home = () => {
                 />
               ))}
             </div>
-            <Carousel className="relative">
-              <CarouselContent>
-                <CarouselItem>
-                  <div className="text-center px-4">
-                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
-                      “Thank you so much for making the French lessons such an interesting and innovative experience for Isla. She's clearly been having a really wonderful time.”
-                    </blockquote>
-                    <cite className="text-lg text-muted-foreground">A Year 2 parent</cite>
+          </div>
+          
+          <div className="max-w-5xl mx-auto space-y-6">
+            {/* Row 1 - Equal columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Testimonial 1 */}
+              <div className="h-full">
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <h3 className="font-heading font-bold text-lg text-french-navy mb-3">
+                    A wonderful experience
+                  </h3>
+                  <p className="text-french-blue/80 leading-relaxed mb-4 flex-grow">
+                    Thank you so much for making the French lessons such an interesting and innovative experience for Isla. She's clearly been having a really wonderful time.
+                  </p>
+                  <div className="flex items-center gap-3 mt-auto justify-end">
+                    <div className="text-right">
+                      <div className="font-medium text-french-navy">Parent</div>
+                      <div className="text-sm text-muted-foreground">Year 2 student</div>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-medium">
+                      P
+                    </div>
                   </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="text-center px-4">
-                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
-                      “Thank you so much for my daughter’s session today. She came home so positive and really enjoyed her time with you. And thank you for all your inspiration, she has a completely different attitude to French!”
-                    </blockquote>
-                    <cite className="text-lg text-muted-foreground">An A-Level parent</cite>
+                </div>
+              </div>
+
+              {/* Testimonial 2 - Ian */}
+              <div className="h-full">
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <h3 className="font-heading font-bold text-lg text-french-navy mb-3">
+                    Natural and motivating
+                  </h3>
+                  <p className="text-french-blue/80 leading-relaxed mb-4 flex-grow">
+                    I've loved my lessons with Barbara at French Flow. She carefully tailors everything to my level and what I'm interested in, which makes learning feel natural and motivating. She's a joy to work with and always makes our sessions fun!
+                  </p>
+                  <div className="flex items-center gap-3 mt-auto justify-end">
+                    <div className="text-right">
+                      <div className="font-medium text-french-navy">Ian</div>
+                      <div className="text-sm text-muted-foreground">Adult learner</div>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-medium">
+                      I
+                    </div>
                   </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="text-center px-4">
-                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
-                      "I've loved my lessons with Barbara at French Flow. She carefully tailors everything to my level and what I'm interested in, which makes learning feel natural and motivating. She's a joy to work with and always makes our sessions fun!"
-                    </blockquote>
-                    <cite className="text-lg text-muted-foreground">Ian</cite>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2 - Narrower left, wider right */}
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Testimonial 3 - Narrower */}
+              <div className="md:w-2/5">
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <h3 className="font-heading font-bold text-lg text-french-navy mb-3">
+                    A completely different attitude to French
+                  </h3>
+                  <p className="text-french-blue/80 leading-relaxed mb-4 flex-grow">
+                    Thank you so much for my daughter's session today. She came home so positive and really enjoyed her time with you. And thank you for all your inspiration, she has a completely different attitude to French!
+                  </p>
+                  <div className="flex items-center gap-3 mt-auto justify-end">
+                    <div className="text-right">
+                      <div className="font-medium text-french-navy">Parent</div>
+                      <div className="text-sm text-muted-foreground">A-Level student</div>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-medium">
+                      P
+                    </div>
                   </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="text-center px-4">
-                    <blockquote className="text-2xl md:text-3xl font-heading italic mb-6 leading-relaxed text-foreground">
-                      "Barbara has taken my French to a new level. She tailors each lesson carefully to where I am, which means I feel challenged but never overwhelmed. She grounds everything in real life situations and culture which makes the language feel genuinely useful. We work across speaking, listening, reading and writing in a balanced way, and I leave each session feeling more confident and capable."
-                    </blockquote>
-                    <cite className="text-lg text-muted-foreground">Michal, B1 level</cite>
+                </div>
+              </div>
+
+              {/* Testimonial 4 - Michal - Wider */}
+              <div className="md:w-3/5">
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-full flex flex-col">
+                  <h3 className="font-heading font-bold text-lg text-french-navy mb-3">
+                    Challenged but never overwhelmed
+                  </h3>
+                  <p className="text-french-blue/80 leading-relaxed mb-4 flex-grow">
+                    Barbara has taken my French to a new level. She tailors each lesson carefully to where I am, which means I feel challenged but never overwhelmed. She grounds everything in real life situations and culture which makes the language feel genuinely useful. We work across speaking, listening, reading and writing in a balanced way, and I leave each session feeling more confident and capable.
+                  </p>
+                  <div className="flex items-center gap-3 mt-auto justify-end">
+                    <div className="text-right">
+                      <div className="font-medium text-french-navy">Michal</div>
+                      <div className="text-sm text-muted-foreground">B1 level</div>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-medium">
+                      M
+                    </div>
                   </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious className="-left-4" />
-              <CarouselNext className="-right-4" />
-            </Carousel>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
