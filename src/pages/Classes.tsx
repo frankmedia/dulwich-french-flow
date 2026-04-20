@@ -113,7 +113,7 @@ const Classes = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             {/* Group Classes */}
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden flex flex-col">
               <CardHeader className="pb-6">
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Users className="w-8 h-8 text-white" />
@@ -125,7 +125,7 @@ const Classes = () => {
                   Join our warm and friendly small groups for conversation practice and structured learning in a supportive environment.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent className="pt-0 flex-grow">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
@@ -147,7 +147,7 @@ const Classes = () => {
               </CardContent>
               
               {/* Pricing Section */}
-              <div className="bg-white text-french-navy p-8 mt-6 border-t border-gray-200 rounded-b-xl">
+              <div className="bg-white text-french-navy p-8 mt-auto border-t border-gray-200 rounded-b-xl">
                 <div className="text-center">
                   <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
                   <div className="space-y-2">
@@ -164,7 +164,7 @@ const Classes = () => {
             </Card>
 
             {/* 1:1 Sessions */}
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-purple-50 to-pink-50 overflow-hidden">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-elegant bg-gradient-to-br from-purple-50 to-pink-50 overflow-hidden flex flex-col">
               <CardHeader className="pb-6">
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Target className="w-8 h-8 text-white" />
@@ -176,7 +176,7 @@ const Classes = () => {
                   Personalized lessons tailored to your specific goals, schedule, and learning pace. Perfect for focused improvement or specific needs.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent className="pt-0 flex-grow">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
@@ -198,7 +198,7 @@ const Classes = () => {
               </CardContent>
               
               {/* Pricing Section */}
-              <div className="bg-white text-french-navy p-8 mt-6 border-t border-gray-200">
+              <div className="bg-white text-french-navy p-8 mt-auto border-t border-gray-200 rounded-b-xl">
                 <div className="text-center">
                   <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
                   <div className="space-y-2">
