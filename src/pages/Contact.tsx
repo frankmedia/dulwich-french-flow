@@ -375,7 +375,7 @@ This message was sent from the French Flow website contact form.`
                               <div className={`rounded p-3 border transition-colors ${formData.adultClassType === 'group' ? 'bg-white border-french-blue/30 shadow-sm' : 'bg-gray-50 border-gray-100'}`}>
                                 <div className="flex justify-between items-baseline mb-1">
                                   <span className="text-sm font-medium text-french-navy">10-week block</span>
-                                  <span className="text-lg font-bold text-french-blue">£220</span>
+                                  <span className="text-lg font-bold text-french-blue">£250</span>
                                 </div>
                                 <div className="text-xs text-gray-500 flex items-center gap-1">
                                   <CheckCircle className="w-3 h-3" /> Materials included
@@ -409,13 +409,9 @@ This message was sent from the French Flow website contact form.`
                               <div className="text-sm text-gray-500 mb-3">Personalised lessons</div>
                               
                               <div className={`rounded p-3 border transition-colors ${formData.adultClassType === '1to1' ? 'bg-white border-french-blue/30 shadow-sm' : 'bg-gray-50 border-gray-100'}`}>
-                                <div className="flex justify-between items-baseline mb-2">
-                                  <span className="text-sm font-medium text-french-navy">Per session</span>
-                                  <span className="text-lg font-bold text-french-blue">£45</span>
-                                </div>
-                                <div className="flex justify-between items-baseline pt-2 border-t border-gray-200/50">
-                                  <span className="text-sm font-medium text-french-navy">10 sessions</span>
-                                  <span className="text-lg font-bold text-french-blue">£420</span>
+                                <div className="flex justify-between items-baseline">
+                                  <span className="text-sm font-medium text-french-navy">10-session package</span>
+                                  <span className="text-lg font-bold text-french-blue">£500</span>
                                 </div>
                               </div>
                             </div>

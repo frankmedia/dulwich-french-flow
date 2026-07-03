@@ -153,7 +153,7 @@ const Classes = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-french-blue/80">10-week block:</span>
-                      <span className="font-bold text-lg text-french-navy">from £220</span>
+                      <span className="font-bold text-lg text-french-navy">from £250</span>
                     </div>
                     <div className="text-sm text-french-blue/60 mt-3">
                       * All materials included
@@ -203,12 +203,8 @@ const Classes = () => {
                   <h3 className="text-xl font-heading font-bold mb-2 text-french-navy">Pricing</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-french-blue/80">Per session:</span>
-                      <span className="font-bold text-lg text-french-navy">£45</span>
-                    </div>
-                    <div className="flex justify-between items-center">
                       <span className="text-french-blue/80">10-session package:</span>
-                      <span className="font-bold text-lg text-french-navy">£420</span>
+                      <span className="font-bold text-lg text-french-navy">£500</span>
                     </div>
                     <div className="text-sm text-french-blue/60 mt-3">
                       * All materials included

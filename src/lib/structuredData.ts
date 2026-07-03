@@ -55,11 +55,11 @@ export const businessStructuredData = {
             "name": "French Flow"
           }
         },
-        "price": "220",
+        "price": "250",
         "priceCurrency": "GBP",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "220",
+          "price": "250",
           "priceCurrency": "GBP",
           "unitText": "per 10-week block"
         }
@@ -75,13 +75,13 @@ export const businessStructuredData = {
             "name": "French Flow"
           }
         },
-        "price": "45",
+        "price": "500",
         "priceCurrency": "GBP",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "45",
+          "price": "500",
           "priceCurrency": "GBP",
-          "unitText": "per session"
+          "unitText": "per 10-session package"
         }
       },
       {
