@@ -469,6 +469,27 @@ const Home = () => {
                 </div>
               </div>
             </div>
+
+            {/* Row 3 - Andy */}
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-full flex flex-col">
+                <h3 className="font-heading font-bold text-lg text-french-navy mb-3">
+                  Easy and enjoyable
+                </h3>
+                <p className="text-french-blue/80 leading-relaxed mb-4 flex-grow">
+                  Barbara is a wonderful teacher. She is knowledgeable and well prepared as well as being funny and lovely to chat to. Revisiting my rusty French was a daunting task, but Barbara has made it so easy and enjoyable. I'm loving my French sessions with her.
+                </p>
+                <div className="flex items-center gap-3 mt-auto justify-end">
+                  <div className="text-right">
+                    <div className="font-medium text-french-navy">Andy</div>
+                    <div className="text-sm text-muted-foreground">French conversation</div>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-red-500 flex items-center justify-center text-white font-medium">
+                    A
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

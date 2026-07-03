@@ -129,8 +129,8 @@ export const businessStructuredData = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
-    "ratingCount": "4",
-    "reviewCount": "4",
+    "ratingCount": "5",
+    "reviewCount": "5",
     "bestRating": "5",
     "worstRating": "1"
   },
@@ -186,6 +186,19 @@ export const businessStructuredData = {
         "name": "Michal"
       },
       "reviewBody": "Barbara has taken my French to a new level. She tailors each lesson carefully to where I am, which means I feel challenged but never overwhelmed. She grounds everything in real life situations and culture which makes the language feel genuinely useful."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Andy"
+      },
+      "reviewBody": "Barbara is a wonderful teacher. She is knowledgeable and well prepared as well as being funny and lovely to chat to. Revisiting my rusty French was a daunting task, but Barbara has made it so easy and enjoyable. I'm loving my French sessions with her."
     }
   ]
 };
@@ -243,6 +256,24 @@ export const testimonialStructuredData = {
         "name": "Michal"
       },
       "reviewBody": "Barbara has taken my French to a new level. She tailors each lesson carefully to where I am, which means I feel challenged but never overwhelmed. She grounds everything in real life situations and culture which makes the language feel genuinely useful.",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "French Flow"
+      }
+    },
+    {
+      "@type": "Review",
+      "position": 4,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Andy"
+      },
+      "reviewBody": "Barbara is a wonderful teacher. She is knowledgeable and well prepared as well as being funny and lovely to chat to. Revisiting my rusty French was a daunting task, but Barbara has made it so easy and enjoyable. I'm loving my French sessions with her.",
       "itemReviewed": {
         "@type": "LocalBusiness",
         "name": "French Flow"
